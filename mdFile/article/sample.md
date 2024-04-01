@@ -2,6 +2,7 @@
 title: '個別記事'
 date: '2022-04-01'
 description: '個別記事'
+category: 'test'
 ---
 
 個別記事
