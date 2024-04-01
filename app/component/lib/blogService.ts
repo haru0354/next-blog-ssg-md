@@ -29,7 +29,7 @@ export async function getCategories() {
   return categories;
 }
 
-export async function getCategory({params}: {params: string}) {
+export async function getCategory(params: string) {
   const slug = params;
   const filePath = path.join(
     process.cwd(),
