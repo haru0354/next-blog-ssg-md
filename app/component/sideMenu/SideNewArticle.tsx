@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getArticles } from "../lib/ArticleService";
+import Image from "next/image";
 
 const SideNewArticle = async () => {
   const articles = await getArticles();
@@ -18,7 +19,15 @@ const SideNewArticle = async () => {
         {filteredArticles.map((article) => {
           return (
             <Link href={`/${article.frontmatter.category}/${article.slug}`} key={article.slug}>
-              <li>{article.frontmatter.title}</li>
+              <div>
+                <Image
+                  src={`/${article.frontmatter.eyeCatchName}`}
+                  alt={`${article.frontmatter.eyeCatchAlt}`}
+                  width={100}
+                  height={100}
+                />
+                <h3>{article.frontmatter.title}</h3>
+              </div>
             </Link>
           );
         })}
