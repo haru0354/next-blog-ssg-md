@@ -1,12 +1,24 @@
-import { getArticle, getArticles } from "@/app/component/lib/ArticleServise";
+import { getArticle, getArticles } from "@/app/component/lib/ArticleService";
+
+export async function generateStaticParams() {
+  const articles = await getArticles();
+
+  return articles.map((article) => ({
+    params: {
+      article_slug: article.slug,
+    },
+  }));
+}
 
 const page = async ({ params }: { params: { article_slug: string } }) => {
   const article = await getArticle(params.article_slug);
-  const articles = await getArticles();
-  console.log("article:", article);
-  console.log("articles:", articles);
 
-  return <div></div>;
+  return (
+    <div>
+      {article.frontmatter.title}
+      {article.contentHtml}
+    </div>
+  );
 };
 
 export default page;
