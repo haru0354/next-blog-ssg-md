@@ -1,3 +1,4 @@
+import CategoryInArticlesList from "@/app/component/contentArea/CategoryInArticlesList";
 import {
   getCategories,
   getCategory,
@@ -17,10 +18,13 @@ const page = async ({ params }: { params: { category_slug: string } }) => {
   const category = await getCategory(params.category_slug);
 
   return (
-    <div>
-      <p>{category.frontmatter.title}</p>
-      <p>{category.frontmatter.date}</p>
-    </div>
+    <>
+      <div>
+        <p>{category.frontmatter.title}</p>
+        <p>{category.frontmatter.date}</p>
+      </div>
+      <CategoryInArticlesList params={params.category_slug} />
+    </>
   );
 };
 

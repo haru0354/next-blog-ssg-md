@@ -2,7 +2,9 @@
 title: '個別記事2'
 date: '2022-04-01'
 description: '個別記事2'
-category: 'test2'
+category: 'sample'
+eyeCatchName: 'test.jpg'
+eyeCatchAlt: 'test'
 ---
 
 個別記事2
