@@ -15,7 +15,6 @@ const TopNewArticle = async () => {
   return (
     <div>
       <h2>新着記事</h2>
-      <ul>
         {filteredArticles.map((article) => {
           return (
             <Link
@@ -34,7 +33,6 @@ const TopNewArticle = async () => {
             </Link>
           );
         })}
-      </ul>
     </div>
   );
 };

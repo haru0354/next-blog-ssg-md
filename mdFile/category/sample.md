@@ -2,6 +2,8 @@
 title: 'Next.jsでmarkdownブログを構築'
 date: '2022-04-01'
 description: 'Next.jsでmarkdownファイルを利用したブログの構築。'
+eyeCatchName: 'test.jpg'
+eyeCatchAlt: 'test'
 ---
 
 
