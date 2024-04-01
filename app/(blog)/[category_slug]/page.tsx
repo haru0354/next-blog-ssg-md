@@ -1,4 +1,7 @@
-import { getCategories, getCategory } from "@/app/component/lib/blogService";
+import {
+  getCategories,
+  getCategory,
+} from "@/app/component/lib/CategoryService";
 
 export async function generateStaticParams() {
   const categories = await getCategories();
