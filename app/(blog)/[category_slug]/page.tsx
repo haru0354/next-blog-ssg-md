@@ -31,7 +31,7 @@ const page = async ({ params }: { params: { category_slug: string } }) => {
               categoryName={category.frontmatter.categoryName}
               isCategory={true}
             />
-            <h1 className="text-2xl font-semibold mx-2 mb-4">
+            <h1 className="text-2xl font-semibold mx-2 my-4">
               {category.frontmatter.title}
             </h1>
             <Image

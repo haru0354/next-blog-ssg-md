@@ -29,7 +29,7 @@ const page = async ({
             categorySlug={params.category_slug}
             categoryName={article.frontmatter.category}
           />
-          <h1 className="text-2xl font-semibold mx-2 mb-4">
+          <h1 className="text-2xl font-semibold mx-2 my-4">
             {article.frontmatter.title}
           </h1>
           <Image
