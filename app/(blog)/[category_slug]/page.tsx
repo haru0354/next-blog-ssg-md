@@ -19,12 +19,11 @@ export async function generateStaticParams() {
 
 const page = async ({ params }: { params: { category_slug: string } }) => {
   const category = await getCategory(params.category_slug);
-  console.log(category);
 
   return (
     <main className="flex justify-center">
       <div className="max-w-[1150px] flex flex-wrap justify-center my-10">
-        <div className="flex flex-col justify-center w-full md:w-[800px] p-4 md:mr-6 bg-white">
+        <div className="flex flex-col w-full md:w-[800px] p-4 md:mr-6 bg-white">
           <h1 className="text-2xl font-semibold mx-2 mb-4">
             {category.frontmatter.title}
           </h1>
