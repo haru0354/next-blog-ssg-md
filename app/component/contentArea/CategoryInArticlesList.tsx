@@ -11,7 +11,7 @@ const CategoryInArticlesList = async ({ params }: { params: string }) => {
 
   return (
     <>
-      <h2>関連記事</h2>
+      <h3>関連記事</h3>
       <div className="w-full flex flex-wrap justify-center">
         {filteredArticles.map((article) => (
           <Link
