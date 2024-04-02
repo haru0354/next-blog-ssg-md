@@ -2,8 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+$cWineRed: #904669;
+
+
+
+
 @media (max-width: 639px) {
   .md:flex-wrap {
     flex-direction: column;
   }
 }
+
+body {
+  line-height: 1.7rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 247 237 / var(--tw-bg-opacity));
+}
+
+
+p {
+  margin-bottom: 1.4rem;
+}
+
+h2 {
+  padding: 1.25rem;
+  margin: 2rem 0;
+  background-color: #60a5fa;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ffffff;
+  border-radius: 0.25rem;
+}
+
+
+

@@ -6,24 +6,28 @@ const TopCategory = async () => {
   const categories = await getCategories();
 
   return (
-    <>
-      <h2>カテゴリ</h2>
-      {categories.map((category) => {
-        return (
-          <Link href={`/${category.slug}`} key={category.slug}>
-            <div>
-              <Image
-                src={`/${category.frontmatter.eyeCatchName}`}
-                alt={`${category.frontmatter.eyeCatchAlt}`}
-                width={100}
-                height={100}
-              />
-              <h3>{category.frontmatter.title}</h3>
-            </div>
-          </Link>
-        );
-      })}
-    </>
+    <section className="bg-gray-100 w-full md:py-8 py-2">
+      <div className="max-w-[1150px] mx-auto px-4">
+        <h2>カテゴリ</h2>
+        <div className="flex flex-wrap w-full justify-center">
+          {categories.map((category) => {
+            return (
+              <Link href={`/${category.slug}`} key={category.slug}>
+                <div className="flex flex-col justify-center items-center mx-2 mb-8 md:max-w-[350px] md:min-w-[350px]">
+                  <Image
+                    src={`/${category.frontmatter.eyeCatchName}`}
+                    alt={`${category.frontmatter.eyeCatchAlt}`}
+                    width={325}
+                    height={210}
+                  />
+                  <h3>{category.frontmatter.title}</h3>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 };
 
