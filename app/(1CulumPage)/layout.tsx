@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import Header from "../component/Header";
+import Footer from "../component/Footer";
+import SideMenu from "../component/SideMenu";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -10,5 +13,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>{children}</>;
+  return (
+    <>
+      <Header />
+      <main className="flex justify-center">
+        <div className="max-w-[1150px] flex flex-wrap justify-center my-10">
+          <div className="flex flex-col flex-wrap w-full md:w-[800px] md:mr-6">
+            <div className="content p-4 bg-white">{children} </div>
+          </div>
+          <div className="flex flex-col w-full md:w-[300px] mt-4 md:mt-0 bg-white">
+            <SideMenu />
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
 }
