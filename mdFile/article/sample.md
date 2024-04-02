@@ -1,8 +1,8 @@
 ---
-title: 'title'
+title: 'ニキビの記事1title'
 date: '2022-04-01'
-description: 'description'
-category: "categorySlug"
+description: 'ニキビの記事1description'
+categoryName: "ニキビ"
 categorySlug: "sample"
 eyeCatchName: '00.jpg'
 eyeCatchAlt: 'test'

@@ -2,11 +2,15 @@ import Link from "next/link";
 import { getArticles } from "../lib/ArticleService";
 import Image from "next/image";
 
-const CategoryInArticlesList2Images = async ({ params }: { params: string }) => {
+const CategoryInArticlesList2Images = async ({
+  params,
+}: {
+  params: string;
+}) => {
   const currentCategory = params;
   const Articles = await getArticles();
   const filteredArticles = Articles.filter(
-    (article) => currentCategory === article.frontmatter.category
+    (article) => currentCategory === article.frontmatter.categorySlug
   );
 
   return (

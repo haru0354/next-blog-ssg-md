@@ -2,7 +2,7 @@
 title: "個別記事aa"
 date: "2022-04-01"
 description: "個別記事"
-category: "sample2"
+categoryName: "美白"
 categorySlug: "sample2"
 eyeCatchName: "00.jpg"
 eyeCatchAlt: "test"

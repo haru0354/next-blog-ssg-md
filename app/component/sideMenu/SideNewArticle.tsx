@@ -21,7 +21,7 @@ const SideNewArticle = async () => {
         {filteredArticles.map((article) => {
           return (
             <Link
-              href={`/${article.frontmatter.category}/${article.slug}`}
+              href={`/${article.frontmatter.categorySlug}/${article.slug}`}
               key={article.slug}
             >
               <div className="hover:bg-blue-100">

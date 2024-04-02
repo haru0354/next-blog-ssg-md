@@ -6,7 +6,7 @@ const CategoryInArticlesList2 = async ({ params }: { params: string }) => {
   const currentCategory = params;
   const Articles = await getArticles();
   const filteredArticles = Articles.filter(
-    (article) => currentCategory === article.frontmatter.category
+    (article) => currentCategory === article.frontmatter.categorySlug
   );
 
   return (

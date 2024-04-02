@@ -9,12 +9,10 @@ type ArticleInArticleListProps = {
 
 const ArticleInArticleList:React.FC<ArticleInArticleListProps> = async ({categorySlug,  }) => {
   const Articles = await getArticles();
-  console.log(Articles);
 
   const filteredArticles = Articles.filter(
     (article) => categorySlug === article.frontmatter.categorySlug
   );
-console.log(filteredArticles);
 
   return (
     <div className="bg-white p-4 mt-8 border border-gray-200">

@@ -1,8 +1,8 @@
 ---
-categoryName: 'サンプル2'
-title: 'サンプル2'
+categoryName: '美白'
+title: '美白title'
 date: '2022-04-01'
-description: 'サンプル2'
+description: '美白description'
 eyeCatchName: '00.jpg'
 eyeCatchAlt: 'test'
 ---
