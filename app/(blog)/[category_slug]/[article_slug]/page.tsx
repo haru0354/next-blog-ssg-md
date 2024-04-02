@@ -1,8 +1,25 @@
 import Breadcrumbs from "@/app/component/contentArea/Breadcrumbs";
 import { getArticle, getArticles } from "@/app/component/lib/ArticleService";
-import SideMenu from "@/app/component/SideMenu";
 import parse from "html-react-parser";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const generateMetadata = async ({
+  params,
+}: {
+  params: { article_slug: string };
+}): Promise<Metadata> => {
+  const article = await getArticle(params.article_slug);
+
+  return {
+    title: article.frontmatter.title,
+    description: article.frontmatter.description,
+    openGraph: {
+      title: article.frontmatter.title,
+      description: article.frontmatter.description,
+    },
+  };
+};
 
 export async function generateStaticParams() {
   const articles = await getArticles();

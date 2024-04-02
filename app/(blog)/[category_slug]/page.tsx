@@ -1,4 +1,3 @@
-import SideMenu from "@/app/component/SideMenu";
 import Breadcrumbs from "@/app/component/contentArea/Breadcrumbs";
 import CategoryInArticlesList from "@/app/component/contentArea/CategoryInArticlesList";
 import {
@@ -7,6 +6,24 @@ import {
 } from "@/app/component/lib/CategoryService";
 import parse from "html-react-parser";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const generateMetadata = async ({
+  params,
+}: {
+  params: { category_slug: string };
+}): Promise<Metadata> => {
+  const category = await getCategory(params.category_slug);
+
+  return {
+    title: category.frontmatter.title,
+    description: category.frontmatter.description,
+    openGraph: {
+      title: category.frontmatter.title,
+      description: category.frontmatter.description,
+    },
+  };
+};
 
 export async function generateStaticParams() {
   const categories = await getCategories();
