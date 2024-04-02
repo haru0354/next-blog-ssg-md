@@ -35,28 +35,17 @@ const ArticleInArticleList: React.FC<ArticleInArticleListProps> = async ({
       <div className="w-full flex flex-wrap justify-center">
         {latestArticles.map((article) => (
           <Link
-          href={`/${article.frontmatter.categorySlug}/${article.slug}`}
-          key={article.slug}
+            href={`/${article.frontmatter.categorySlug}/${article.slug}`}
+            key={article.slug}
           >
-            <div className="flex flex-wrap justify-center md:flex-nowrap w-full my-2">
-              <div className="min-w-[342px] mb-2 md:mb-0">
-                <Image
-                  src={`/${article.frontmatter.eyeCatchName}`}
-                  alt={`${article.frontmatter.eyeCatchAlt}`}
-                  width={342}
-                  height={225}
-                />
-              </div>
-              <div className="flex flex-col md:min-w-[422px] py-2 px-4">
-                <h3 className="mb-6 font-semibold">
-                  {article.frontmatter.title}
-                </h3>
-                <p>
-                  {article.frontmatter.description.length > 80
-                    ? `${article.frontmatter.description.slice(0, 80)}...`
-                    : article.frontmatter.description}
-                </p>
-              </div>
+            <div className="flex flex-col max-w-[367px] md:min-h-[330px] mx-2 my-4">
+              <Image
+                src={`/${article.frontmatter.eyeCatchName}`}
+                alt={`${article.frontmatter.eyeCatchAlt}`}
+                width={367}
+                height={210}
+              />
+              <h3 className="my-4">{article.frontmatter.title}</h3>
             </div>
           </Link>
         ))}
