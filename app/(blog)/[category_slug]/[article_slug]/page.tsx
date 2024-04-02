@@ -24,7 +24,7 @@ const page = async ({
   return (
     <main className="flex justify-center">
       <div className="max-w-[1150px] flex flex-wrap justify-center my-10">
-        <div className="flex flex-col w-full md:w-[800px] p-4 md:mr-6 bg-white">
+        <div className="content flex flex-col w-full md:w-[800px] p-4 md:mr-6 bg-white">
           <Breadcrumbs
             categorySlug={params.category_slug}
             categoryName={article.frontmatter.category}

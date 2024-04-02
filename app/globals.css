@@ -12,28 +12,30 @@ body {
   line-height: 1.7rem;
   --tw-bg-opacity: 1;
   background-color: rgb(255 247 237 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+    color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
 p {
   margin-bottom: 1.4rem;
 }
 
-h2 {
-  padding: 1.25rem;
-  margin: 2rem 0;
-  background-color: #60a5fa;
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #ffffff;
-  border-radius: 0.25rem;
+
+.content a {
+  --tw-text-opacity: 1;
+  color: rgb(3 105 161 / var(--tw-text-opacity));
 }
 
-.template h2 {
-  padding: 1.25rem;
-  margin: 2rem 0;
-  background-color: #60a5fa;
-  font-size: 1.25rem;
+.content h2 {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  background-color: #1f2937;
+  color: #ffffff;
   font-weight: bold;
-  color: #60a5fa;
   border-radius: 0.25rem;
 }
