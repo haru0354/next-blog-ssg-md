@@ -8,7 +8,7 @@ const Footer = () => {
           <Link href="/privacypolicy">プライバシーポリシー・免責事項</Link>
         </li>
         <li className="mb-2">
-          &copy;英語なしで最高の海外旅行の思い出を作る「トラベルメモリー」
+          &copy;サイトタイトル
         </li>
       </ul>
     </footer>
