@@ -61,7 +61,7 @@ const page = async ({
         </p>
         {parse(article.contentHtml)}
       </div>
-      <ArticleInArticleList categorySlug={params.category_slug} />
+      <ArticleInArticleList categorySlug={params.category_slug} articleSlug={params.article_slug} />
     </>
   );
 };
