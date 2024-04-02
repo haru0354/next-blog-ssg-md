@@ -2,7 +2,7 @@
 title: 'サンプル2'
 date: '2022-04-01'
 description: 'サンプル2'
-eyeCatchName: 'test.jpg'
+eyeCatchName: '00.jpg'
 eyeCatchAlt: 'test'
 ---
 

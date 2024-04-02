@@ -3,7 +3,7 @@ title: '個別記事'
 date: '2022-04-01'
 description: '個別記事'
 category: 'sample'
-eyeCatchName: 'test.jpg'
+eyeCatchName: '00.jpg'
 eyeCatchAlt: 'test'
 ---
 

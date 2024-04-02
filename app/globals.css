@@ -2,12 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-$cWineRed: #904669;
-
-
-
-
-@media (max-width: 639px) {
+@media (max-width: 800px) {
   .md:flex-wrap {
     flex-direction: column;
   }
