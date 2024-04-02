@@ -89,6 +89,27 @@ categorySlug: カテゴリのスラッグ名を入力してください。
 
 上記の項目はsitemap.xmlを作成するのに必要な項目となっています。
 
+## デザインの変更
+
+- パターン2への変更(ブロック型)
+  - SideMenu.tsxの「bg-white」を外す
+  - コンポーネント > sideMenu 内のコンポーネントをSideCategory2とSideNewArticle2に変更。
+  - (blog) > [category_slug]の１つ目のdivタグに「border border-gray-200」を追加
+  - (blog) > [category_slug] > [article_slug]の１つ目のdivタグに「border border-gray-200」を追加
+
+個人的にはデザインパターン2へ変更するなら統一して全てのコンポーネントを変えた方が良いと思います。
+ただ、組み合わせはできるのでご自由に変更が可能です。
+
+- カテゴリの関連記事の変更
+  - (blog) > [category_slug] 最下部の(CategoryInArticlesList)コンポーネントを変更
+
+1. 画像2枚が横並び(CategoryInArticlesList2Images)
+2. 左に画像、右にタイトルと説明文(CategoryInArticlesList)
+
+
+(blog) > [category_slug]
+
+
 ### 今後追加する項目
 
 - デザインパターン

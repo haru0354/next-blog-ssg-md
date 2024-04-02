@@ -16,7 +16,7 @@ body {
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
-p {
+.content p {
   margin-bottom: 1.4rem;
 }
 

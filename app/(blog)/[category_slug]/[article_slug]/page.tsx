@@ -39,7 +39,7 @@ const page = async ({
   const article = await getArticle(params.article_slug);
 
   return (
-    <div className="content p-4 bg-white">
+    <div className="content p-4 bg-white border border-gray-200">
       <Breadcrumbs
         categorySlug={params.category_slug}
         categoryName={article.frontmatter.category}

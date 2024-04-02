@@ -1,5 +1,4 @@
 import Breadcrumbs from "@/app/component/contentArea/Breadcrumbs";
-import CategoryInArticlesList from "@/app/component/contentArea/CategoryInArticlesList";
 import {
   getCategories,
   getCategory,
@@ -7,6 +6,7 @@ import {
 import parse from "html-react-parser";
 import Image from "next/image";
 import type { Metadata } from "next";
+import CategoryInArticlesList2Images from "@/app/component/contentArea/CategoryInArticlesList2Images";
 
 export const generateMetadata = async ({
   params,
@@ -40,7 +40,7 @@ const page = async ({ params }: { params: { category_slug: string } }) => {
 
   return (
     <>
-      <div className="content p-4 bg-white">
+      <div className="content p-4 bg-white border border-gray-200">
         <Breadcrumbs
           categorySlug={params.category_slug}
           categoryName={category.frontmatter.categoryName}
@@ -61,7 +61,7 @@ const page = async ({ params }: { params: { category_slug: string } }) => {
         </p>
         {parse(category.contentHtml)}
       </div>
-      <CategoryInArticlesList params={params.category_slug} />
+      <CategoryInArticlesList2Images params={params.category_slug} />
     </>
   );
 };

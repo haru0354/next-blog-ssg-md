@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getArticles } from "../lib/ArticleService";
 import Image from "next/image";
 
-const SideNewArticle = async () => {
+const SideNewArticle2 = async () => {
   const articles = await getArticles();
   const sortedArticles = articles.sort((a, b) => {
     const dateA = new Date(a.frontmatter.date);
@@ -13,10 +13,8 @@ const SideNewArticle = async () => {
   const filteredArticles = sortedArticles.slice(0, 5);
 
   return (
-    <nav>
-      <p className="w-full my-4 py-4 px-2 bg-gray-800 text-white font-bold rounded">
-        新着記事
-      </p>
+    <nav className="bg-white mt-8 border-r border-l border-gray-200">
+      <p className="w-full p-4 bg-gray-800 text-white font-bold">新着記事</p>
       <ul>
         {filteredArticles.map((article) => {
           return (
@@ -32,7 +30,9 @@ const SideNewArticle = async () => {
                   height={100}
                   className="mx-auto"
                 />
-                <p className="my-4">{article.frontmatter.title}</p>
+                <p className="border-b border-gray-200">
+                  {article.frontmatter.title}
+                </p>
               </div>
             </Link>
           );
@@ -42,4 +42,4 @@ const SideNewArticle = async () => {
   );
 };
 
-export default SideNewArticle;
+export default SideNewArticle2;
