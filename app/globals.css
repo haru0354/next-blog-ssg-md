@@ -13,7 +13,7 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(255 247 237 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
-    color: rgb(31 41 55 / var(--tw-text-opacity));
+  color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
 p {
@@ -21,20 +21,30 @@ p {
 }
 
 .content a {
-  --tw-text-opacity: 1;
   color: rgb(3 105 161 / var(--tw-text-opacity));
 }
 
 .content h2 {
   width: 100%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 2.0rem;
+  margin-bottom: 2.0rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   background-color: #1f2937;
-  color: #ffffff;
-  font-weight: bold;
   border-radius: 0.25rem;
+}
+
+.content h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  margin-top: 2.0rem;
+  margin-bottom: 2.0rem;
+  border-bottom-width: 2px;
+  border-bottom-color: #4a5568;
 }

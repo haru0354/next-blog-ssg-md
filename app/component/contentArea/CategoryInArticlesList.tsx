@@ -11,7 +11,7 @@ const CategoryInArticlesList = async ({ params }: { params: string }) => {
 
   return (
     <div className="bg-white p-4 mt-8">
-      <h2 className="w-full my-4 py-4 px-2  bg-gray-800 text-white font-bold rounded">
+      <h2 className="w-full my-4 py-4 px-2 bg-gray-800 text-white text-xl font-semibold rounded">
         関連記事
       </h2>
       <div className="w-full flex flex-wrap justify-center">
