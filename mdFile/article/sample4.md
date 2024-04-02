@@ -3,6 +3,7 @@ title: 'PC・スマホ・タブレットで利用できる無料の国内旅行�
 date: '2022-04-01'
 description: '個別記事'
 category: 'sample'
+categorySlug: 'sample2'
 eyeCatchName: '00.jpg'
 eyeCatchAlt: 'test'
 ---

@@ -1,8 +1,9 @@
 ---
-title: 'PC・スマホ・タブレットで利用できる無料の国内旅行・海外旅行しおりアプリ。'
+title: 'title'
 date: '2022-04-01'
-description: '個別記事'
-category: 'sample'
+description: 'description'
+category: "categorySlug"
+categorySlug: "sample"
 eyeCatchName: '00.jpg'
 eyeCatchAlt: 'test'
 ---

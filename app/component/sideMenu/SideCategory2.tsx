@@ -13,9 +13,9 @@ const SideCategory2 = async () => {
             <Link href={`/${category.slug}`} key={category.slug}>
               <li
                 className="p-4 border-b border-gray-200 hover:bg-blue-100"
-                key={category.frontmatter.title}
+                key={category.frontmatter.categoryName}
               >
-                {category.frontmatter.title}
+                {category.frontmatter.categoryName}
               </li>
             </Link>
           );

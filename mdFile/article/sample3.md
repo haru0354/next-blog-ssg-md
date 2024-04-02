@@ -1,10 +1,11 @@
 ---
-title: '個別記事aa'
-date: '2022-04-01'
-description: '個別記事'
-category: 'sample'
-eyeCatchName: '00.jpg'
-eyeCatchAlt: 'test'
+title: "個別記事aa"
+date: "2022-04-01"
+description: "個別記事"
+category: "sample2"
+categorySlug: "sample2"
+eyeCatchName: "00.jpg"
+eyeCatchAlt: "test"
 ---
 
 個別記事
@@ -15,4 +16,4 @@ eyeCatchAlt: 'test'
 
 ### 個別記事
 
-サンプル2
+サンプル 2
