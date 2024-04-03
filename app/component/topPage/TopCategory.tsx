@@ -19,14 +19,14 @@ const TopCategory = async () => {
           {categories.map((category) => {
             return (
               <Link href={`/${category.slug}`} key={category.slug}>
-                <div className="flex flex-col justify-center items-center mx-2 mb-8 md:max-w-[350px] md:min-w-[350px]">
+                <div className="flex flex-col justify-center items-center mx-2 mb-8 md:max-w-[325px] md:min-w-[325px]">
                   <Image
                     src={`/${category.frontmatter.eyeCatchName}`}
                     alt={`${category.frontmatter.eyeCatchAlt}`}
                     width={325}
                     height={210}
                   />
-                  <h3>{category.frontmatter.title}</h3>
+                  <h3 className="mt-4 ">{category.frontmatter.title}</h3>
                 </div>
               </Link>
             );
