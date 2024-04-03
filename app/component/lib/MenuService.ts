@@ -13,4 +13,14 @@ export async function getGlobalMenu() {
   };
 }
 
+export async function getLinks() {
+  const globalMenuDirectory = path.join(process.cwd(), "mdFile", "menu");
+  const filePath = path.join(globalMenuDirectory, `link.md`);
+  const fileContents = await fs.promises.readFile(filePath, "utf8");
+  const { data } = matter(fileContents);
+
+  return {
+    frontmatter: data,
+  };
+}
   
