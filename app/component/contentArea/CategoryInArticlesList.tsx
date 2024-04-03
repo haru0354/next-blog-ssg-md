@@ -17,7 +17,7 @@ const CategoryInArticlesList2 = async ({ params }: { params: string }) => {
       <div className="w-full flex flex-wrap justify-center">
         {filteredArticles.map((article) => (
           <Link
-            href={`/${article.frontmatter.category}/${article.slug}`}
+            href={`/${article.frontmatter.categorySlug}/${article.slug}`}
             key={article.slug}
           >
             <div className="flex flex-wrap justify-center md:flex-nowrap w-full my-2">

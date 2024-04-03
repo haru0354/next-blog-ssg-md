@@ -18,7 +18,7 @@ const ArticleInArticleList: React.FC<ArticleInArticleListProps> = async ({
       categorySlug === article.frontmatter.categorySlug &&
       articleSlug !== article.slug
   );
-  
+
   const sortedArticles = filteredArticles.sort((a, b) => {
     const dateA = new Date(a.frontmatter.date);
     const dateB = new Date(b.frontmatter.date);

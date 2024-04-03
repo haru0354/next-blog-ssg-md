@@ -21,7 +21,7 @@ const CategoryInArticlesList2Images = async ({
       <div className="w-full flex flex-wrap justify-center">
         {filteredArticles.map((article) => (
           <Link
-            href={`/${article.frontmatter.category}/${article.slug}`}
+            href={`/${article.frontmatter.categorySlug}/${article.slug}`}
             key={article.slug}
           >
             <div className="flex flex-col max-w-[367px] md:min-h-[330px] mx-2 my-4">
