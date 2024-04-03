@@ -1,5 +1,5 @@
 ---
-name: "ああああああああああああ"
+name: "サンプル"
 slug: "sample/sample"
 name2: "いいいいい"
 slug2: "sample"
