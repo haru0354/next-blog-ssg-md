@@ -4,7 +4,7 @@ date: "2022-04-01"
 description: "個別記事"
 categoryName: "ニキビ"
 categorySlug: "sample"
-eyeCatchName: "00.jpg"
+eyeCatchName: "00"
 eyeCatchAlt: "test"
 ---
 

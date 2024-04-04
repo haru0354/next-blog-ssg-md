@@ -1,5 +1,5 @@
 ---
 slug: "sample"
-eyeCatchName: "00.jpg"
+eyeCatchName: "00"
 eyeCatchAlt: "00"
 ---

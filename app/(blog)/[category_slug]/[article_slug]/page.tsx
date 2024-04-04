@@ -49,7 +49,7 @@ const page = async ({
           {article.frontmatter.title}
         </h1>
         <Image
-          src={`/${article.frontmatter.eyeCatchName}`}
+          src={`/image_webp//${article.frontmatter.eyeCatchName}.webp`}
           alt={`${article.frontmatter.eyeCatchAlt}`}
           width={750}
           height={493}

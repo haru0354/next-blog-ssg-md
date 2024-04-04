@@ -15,10 +15,10 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   return (
     <span className="text-sm">
       <Image
-        src="/home.png"
+        src="/image_webp/home.webp"
         alt="a"
-        width={30}
-        height={30}
+        width={25}
+        height={25}
         className="inline mb-[2px] mr-2"
       />
       <Link href="/">ホーム</Link>

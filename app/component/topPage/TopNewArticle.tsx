@@ -29,16 +29,12 @@ const TopNewArticle = async () => {
                 href={`/${article.frontmatter.categorySlug}/${article.slug}`}
                 key={article.slug}
               >
-                <div className="flex flex-col justify-center items-center mx-2 mb-8 md:max-w-[350px] md:min-w-[350px]">
+                <div className="flex flex-col justify-center items-center mx-2 mb-8 md:max-w-[320px] md:min-w-[320px]">
                   <Image
-                    src={`/${article.frontmatter.eyeCatchName}`}
+                    src={`/image_webp/${article.frontmatter.eyeCatchName}.webp`}
                     alt={`${article.frontmatter.eyeCatchAlt}`}
-                    width={350}
+                    width={320}
                     height={230}
-                    style={{
-                      width: "350px",
-                      maxHeight: "230px",
-                    }}
                   />
                   <h3 className="p-4">{article.frontmatter.title}</h3>
                 </div>

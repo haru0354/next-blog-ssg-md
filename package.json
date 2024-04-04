@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "node app/component/util/ConvertToWebp.js && next build",
-    "start": "next start",
+    "dev": "node scripts/ConvertToWebp.js && next dev",
+    "build": "node scripts/ConvertToWebp.js && next build",
+    "start": "npx serve@latest out",
     "lint": "next lint"
   },
   "dependencies": {

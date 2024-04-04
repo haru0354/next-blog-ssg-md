@@ -4,7 +4,7 @@ date: "2022-04-01"
 description: "個別記事"
 categoryName: "美白"
 categorySlug: "sample2"
-eyeCatchName: "00.jpg"
+eyeCatchName: "00"
 eyeCatchAlt: "test"
 ---
 

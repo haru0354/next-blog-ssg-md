@@ -16,7 +16,7 @@ const SideRecommendArticles = async () => {
       </p>
       <Link href={`/${RecommendArticles.frontmatter.slug}`}>
         <Image
-          src={`/${RecommendArticles.frontmatter.eyeCatchName}`}
+          src={`/thumbnail_webp/${RecommendArticles.frontmatter.eyeCatchName}.webp`}
           alt={`${RecommendArticles.frontmatter.eyeCatchAlt}`}
           width={298}
           height={196}

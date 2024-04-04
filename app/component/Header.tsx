@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = ({ isTopPage }) => {
           {isTopPage ? (
             <h1>
               <Image
-                src="/logo.png"
+                src="/image_webp/logo.webp"
                 alt="サイトタイトル"
                 width={350}
                 height={90}
@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ isTopPage }) => {
             </h1>
           ) : (
             <Image
-              src="/logo.png"
+              src="/image_webp/logo.webp"
               alt="サイトタイトル"
               width={350}
               height={90}
