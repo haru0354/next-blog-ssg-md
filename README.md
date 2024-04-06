@@ -169,12 +169,11 @@ categorySlug: カテゴリのスラッグ名を入力してください。
 # 作成順
 
 ■ssg-md-blog
-1，category
-2，article
-3，sideMenu
+
 4，design
 5, hpParts
 6, metaData
 7, design02(デザインの修正の最終チェックを行う)
-
+8, deploy
+9, change
 
