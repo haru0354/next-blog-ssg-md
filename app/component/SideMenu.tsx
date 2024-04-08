@@ -1,13 +1,13 @@
-import SideCategory from "./sideMenu/SideCategory"
-import SideNewArticle from "./sideMenu/SideNewArticle"
+import SideCategory from "./sideMenu/SideCategory";
+import SideNewArticle from "./sideMenu/SideNewArticle";
 
 const SideMenu = () => {
   return (
-    <div>
-        <SideCategory/>
-        <SideNewArticle/>
+    <div className="px-2 w-full rounded">
+      <SideCategory />
+      <SideNewArticle />
     </div>
-  )
-}
+  );
+};
 
-export default SideMenu
+export default SideMenu;

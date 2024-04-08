@@ -13,26 +13,32 @@ const SideNewArticle = async () => {
   const filteredArticles = sortedArticles.slice(0, 5);
 
   return (
-    <div>
-      <h3>新着記事</h3>
+    <nav>
+      <p className="w-full my-4 py-4 px-2 bg-gray-800 text-white font-bold rounded">
+        新着記事
+      </p>
       <ul>
         {filteredArticles.map((article) => {
           return (
-            <Link href={`/${article.frontmatter.category}/${article.slug}`} key={article.slug}>
-              <div>
+            <Link
+              href={`/${article.frontmatter.category}/${article.slug}`}
+              key={article.slug}
+            >
+              <div className="hover:bg-blue-100">
                 <Image
                   src={`/${article.frontmatter.eyeCatchName}`}
                   alt={`${article.frontmatter.eyeCatchAlt}`}
-                  width={100}
+                  width={280}
                   height={100}
+                  className="mx-auto"
                 />
-                <h3>{article.frontmatter.title}</h3>
+                <p className="my-4">{article.frontmatter.title}</p>
               </div>
             </Link>
           );
         })}
       </ul>
-    </div>
+    </nav>
   );
 };
 

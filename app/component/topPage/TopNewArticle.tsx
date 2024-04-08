@@ -13,27 +13,35 @@ const TopNewArticle = async () => {
   const filteredArticles = sortedArticles.slice(0, 6);
 
   return (
-    <div>
-      <h2>新着記事</h2>
-        {filteredArticles.map((article) => {
-          return (
-            <Link
-              href={`/${article.frontmatter.category}/${article.slug}`}
-              key={article.slug}
-            >
-              <div>
-                <Image
-                  src={`/${article.frontmatter.eyeCatchName}`}
-                  alt={`${article.frontmatter.eyeCatchAlt}`}
-                  width={100}
-                  height={100}
-                />
-                <h3>{article.frontmatter.title}</h3>
-              </div>
-            </Link>
-          );
-        })}
-    </div>
+    <section className="bg-white w-full md:py-8 py-2">
+      <div className="max-w-[1150px] mx-auto px-4">
+        <h2>新着記事</h2>
+        <div className="flex flex-wrap w-full justify-center">
+          {filteredArticles.map((article) => {
+            return (
+              <Link
+                href={`/${article.frontmatter.category}/${article.slug}`}
+                key={article.slug}
+              >
+                <div className="flex flex-col justify-center items-center mx-2 mb-8 md:max-w-[350px] md:min-w-[350px]">
+                  <Image
+                    src={`/${article.frontmatter.eyeCatchName}`}
+                    alt={`${article.frontmatter.eyeCatchAlt}`}
+                    width={350}
+                    height={230}
+                    style={{
+                      width: "350px",
+                      maxHeight: "230px",
+                    }}
+                  />
+                  <h3 className="p-4">{article.frontmatter.title}</h3>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 };
 
