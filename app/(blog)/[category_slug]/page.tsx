@@ -1,4 +1,5 @@
 import SideMenu from "@/app/component/SideMenu";
+import Breadcrumbs from "@/app/component/contentArea/Breadcrumbs";
 import CategoryInArticlesList from "@/app/component/contentArea/CategoryInArticlesList";
 import {
   getCategories,
@@ -21,28 +22,30 @@ const page = async ({ params }: { params: { category_slug: string } }) => {
   const category = await getCategory(params.category_slug);
 
   return (
-    <main className="flex justify-center">
-      <div className="max-w-[1150px] flex flex-wrap justify-center my-10">
-        <div className="flex flex-col w-full md:w-[800px] p-4 md:mr-6 bg-white">
-          <h1 className="text-2xl font-semibold mx-2 mb-4">
-            {category.frontmatter.title}
-          </h1>
-          <Image
-            src={`/${category.frontmatter.eyeCatchName}`}
-            alt={`${category.frontmatter.eyeCatchAlt}`}
-            width={750}
-            height={493}
-            className="mx-auto"
-          />
-          <p className="my-2 mx-2 mb-6 text-gray-600">投稿日：{category.frontmatter.date}</p>
-          {parse(category.contentHtml)}
-          <CategoryInArticlesList params={params.category_slug} />
-        </div>
-        <div className="flex flex-col w-full md:w-[300px] mt-4 md:mt-0 bg-white">
-          <SideMenu />
-        </div>
+    <>
+      <div className="content p-4 bg-white">
+        <Breadcrumbs
+          categorySlug={params.category_slug}
+          categoryName={category.frontmatter.categoryName}
+          isCategory={true}
+        />
+        <h1 className="text-2xl font-semibold mx-2 my-4">
+          {category.frontmatter.title}
+        </h1>
+        <Image
+          src={`/${category.frontmatter.eyeCatchName}`}
+          alt={`${category.frontmatter.eyeCatchAlt}`}
+          width={750}
+          height={493}
+          className="mx-auto"
+        />
+        <p className="my-2 mx-2 mb-6 text-gray-600 font-sm">
+          投稿日：{category.frontmatter.date}
+        </p>
+        {parse(category.contentHtml)}
       </div>
-    </main>
+      <CategoryInArticlesList params={params.category_slug} />
+    </>
   );
 };
 
