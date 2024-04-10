@@ -1,9 +1,14 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "プライバシーポリシー",
+};
 
 const page = () => {
   return (
     <div className="content p-4 bg-white">
-      <h2>プライバリシーポリシー</h2>
+      <h2>プライバシーポリシー</h2>
       このプライバシーポリシーは、<Link href="/">「当サイト」</Link>
       の利用に関する情報収集、利用、および開示に関する方針を説明します。
       <h3>アクセス解析ツールについて</h3>

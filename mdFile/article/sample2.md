@@ -1,18 +1,18 @@
 ---
-title: '個別記事2'
-date: '2022-04-01'
-description: '個別記事2'
-category: 'sample'
-eyeCatchName: '00.jpg'
-eyeCatchAlt: 'test'
+title: "あああああああああああああああああああああああああああああああああ"
+date: "2022-04-01"
+description: "ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ"
+category: "sample"
+eyeCatchName: "00.jpg"
+eyeCatchAlt: "test"
 ---
 
-個別記事2
+個別記事 2
 
-## 個別記事2
+## 個別記事 2
 
-サンプル2
+サンプル 2
 
-### 個別記事2
+### 個別記事 2
 
-サンプル22
+サンプル 22
