@@ -2,7 +2,7 @@
 title: ''
 date: '2022-04-01'
 description: '個別記事'
-category: 'カテゴリ名'
+categoryName: 'カテゴリ名'
 categorySlug: 'カテゴリのスラッグ'
 eyeCatchName: '00.jpg'
 eyeCatchAlt: 'test'

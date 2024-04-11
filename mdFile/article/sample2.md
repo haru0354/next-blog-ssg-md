@@ -2,7 +2,8 @@
 title: "あああああああああああああああああああああああああああああああああ"
 date: "2022-04-01"
 description: "ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ"
-category: "sample"
+categoryName: "ニキビ"
+categorySlug: "sample"
 eyeCatchName: "00.jpg"
 eyeCatchAlt: "test"
 ---

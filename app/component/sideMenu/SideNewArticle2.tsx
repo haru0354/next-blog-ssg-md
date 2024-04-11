@@ -19,18 +19,18 @@ const SideNewArticle2 = async () => {
         {filteredArticles.map((article) => {
           return (
             <Link
-              href={`/${article.frontmatter.category}/${article.slug}`}
+              href={`/${article.frontmatter.categorySlug}/${article.slug}`}
               key={article.slug}
             >
-              <div className="hover:bg-blue-100">
+              <div className="hover:bg-blue-100 py-4 md:py-0">
                 <Image
                   src={`/${article.frontmatter.eyeCatchName}`}
                   alt={`${article.frontmatter.eyeCatchAlt}`}
-                  width={282}
-                  height={100}
+                  width={298}
+                  height={196}
                   className="mx-auto"
                 />
-                <p className="border-b border-gray-200">
+                <p className="border-b pt-2 pb-6 px-4 border-gray-200">
                   {article.frontmatter.title}
                 </p>
               </div>

@@ -125,6 +125,6 @@ categorySlug: カテゴリのスラッグ名を入力してください。
 4，design
 5, hpParts
 6, metaData
-7，デザインパターン2
+7, design02(デザインの修正の最終チェックを行う)
 
 

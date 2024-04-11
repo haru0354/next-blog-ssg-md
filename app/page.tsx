@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Header isTopPage={true}/>
-      <main>
+      <main className="pb-20">
         <TopNewArticle />
         <TopCategory />
       </main>
