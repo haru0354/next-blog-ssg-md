@@ -22,7 +22,7 @@ const SideNewArticle2 = async () => {
               href={`/${article.frontmatter.categorySlug}/${article.slug}`}
               key={article.slug}
             >
-              <div className="hover:bg-blue-100 py-4 md:py-0">
+              <div className="hover:bg-blue-100 pt-4 md:pt-0">
                 <Image
                   src={`/${article.frontmatter.eyeCatchName}`}
                   alt={`${article.frontmatter.eyeCatchAlt}`}
