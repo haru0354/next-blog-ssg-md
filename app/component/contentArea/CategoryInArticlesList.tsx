@@ -17,13 +17,13 @@ const CategoryInArticlesList2 = async ({ params }: { params: string }) => {
       <div className="w-full flex flex-wrap justify-center">
         {filteredArticles.map((article) => (
           <Link
-            href={`/${article.frontmatter.category}/${article.slug}`}
+            href={`/${article.frontmatter.categorySlug}/${article.slug}`}
             key={article.slug}
           >
             <div className="flex flex-wrap justify-center md:flex-nowrap w-full my-2">
               <div className="min-w-[342px] mb-2 md:mb-0">
                 <Image
-                  src={`/${article.frontmatter.eyeCatchName}`}
+                  src={`/thumbnail_webp//${article.frontmatter.eyeCatchName}.webp`}
                   alt={`${article.frontmatter.eyeCatchAlt}`}
                   width={342}
                   height={225}

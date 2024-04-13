@@ -18,7 +18,7 @@ const ArticleInArticleList: React.FC<ArticleInArticleListProps> = async ({
       categorySlug === article.frontmatter.categorySlug &&
       articleSlug !== article.slug
   );
-  
+
   const sortedArticles = filteredArticles.sort((a, b) => {
     const dateA = new Date(a.frontmatter.date);
     const dateB = new Date(b.frontmatter.date);
@@ -40,7 +40,7 @@ const ArticleInArticleList: React.FC<ArticleInArticleListProps> = async ({
           >
             <div className="flex flex-col max-w-[367px] md:min-h-[330px] mx-2 my-4">
               <Image
-                src={`/${article.frontmatter.eyeCatchName}`}
+                src={`/thumbnail_webp//${article.frontmatter.eyeCatchName}.webp`}
                 alt={`${article.frontmatter.eyeCatchAlt}`}
                 width={367}
                 height={210}

@@ -29,9 +29,7 @@ export async function generateStaticParams() {
   const categories = await getCategories();
 
   return categories.map((category) => ({
-    params: {
-      category_slug: category.slug,
-    },
+    category_slug: category.slug,
   }));
 }
 
@@ -50,7 +48,7 @@ const page = async ({ params }: { params: { category_slug: string } }) => {
           {category.frontmatter.title}
         </h1>
         <Image
-          src={`/${category.frontmatter.eyeCatchName}`}
+          src={`/image_webp/${category.frontmatter.eyeCatchName}.webp`}
           alt={`${category.frontmatter.eyeCatchAlt}`}
           width={750}
           height={493}

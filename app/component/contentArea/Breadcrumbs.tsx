@@ -7,10 +7,20 @@ type BreadcrumbsProps = {
   isCategory?: boolean;
 };
 
-const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ categorySlug, categoryName, isCategory }) => {
+const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
+  categorySlug,
+  categoryName,
+  isCategory,
+}) => {
   return (
     <span className="text-sm">
-      <Image src="/home.png" alt="a" width={30} height={30} className="inline mb-[2px] mr-2"/>
+      <Image
+        src="/image_webp/home.webp"
+        alt="a"
+        width={25}
+        height={25}
+        className="inline mb-[2px] mr-2"
+      />
       <Link href="/">ホーム</Link>
       　＞　
       {isCategory ? (
