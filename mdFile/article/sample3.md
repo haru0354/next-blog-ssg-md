@@ -2,8 +2,8 @@
 title: "個別記事aa"
 date: "2022-04-01"
 description: "個別記事"
-categoryName: "ニキビ"
-categorySlug: "sample"
+categoryName: "国内旅行記"
+categorySlug: "sample2"
 eyeCatchName: "00"
 eyeCatchAlt: "test"
 ---

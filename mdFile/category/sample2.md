@@ -1,6 +1,6 @@
 ---
-categoryName: '美白'
-title: '美白title'
+categoryName: '国内旅行記'
+title: 'title'
 date: '2022-04-01'
 description: '美白description'
 eyeCatchName: '00'
