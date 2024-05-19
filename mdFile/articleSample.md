@@ -1,14 +1,15 @@
 ---
-title: ''
+title: '記事タイトル'
 date: '2022-04-01'
-description: '個別記事'
-categoryName: 'カテゴリ名'
-categorySlug: 'カテゴリのスラッグ'
+description: 'metaタグ(description)'
+categoryName: 'カテゴリ名を記入'
+categorySlug: 'sample（カテゴリのスラッグを記入）'
 eyeCatchName: '00.jpg'
-eyeCatchAlt: 'test'
+eyeCatchAlt: 'アイキャッチ画像のAlt'
 ---
 
-個別記事
+ファイル名がslugとなる。
+
 
 ## 個別記事
 
@@ -16,4 +17,4 @@ eyeCatchAlt: 'test'
 
 ### 個別記事
 
-サンプル2
+サンプル
