@@ -1,5 +1,5 @@
 ---
-categoryName: "サンプル3"
+categoryName: "海外旅行記"
 title: "PC・スマホ・タブレットで利用できる無料の国内旅行・海外旅行しおりアプリ。"
 date: "2022-04-01"
 description: "個別記事"

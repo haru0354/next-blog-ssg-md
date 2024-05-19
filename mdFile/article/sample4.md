@@ -2,8 +2,8 @@
 title: "PC・スマホ・タブレットで利用できる無料の国内旅行・海外旅行しおりアプリ。"
 date: "2022-04-01"
 description: "個別記事"
-categoryName: "美白"
-categorySlug: "sample2"
+categoryName: "海外旅行記"
+categorySlug: "sample3"
 eyeCatchName: "00"
 eyeCatchAlt: "test"
 ---

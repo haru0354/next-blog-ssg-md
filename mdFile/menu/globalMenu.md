@@ -1,11 +1,11 @@
 ---
-name: "サンプル"
+name: "旅行の準備"
 slug: "sample/sample"
-name2: "いいいいい"
+name2: "おすすめの旅行先"
 slug2: "sample"
-name3: "TOP"
+name3: "海外旅行記"
 slug3: ""
-name4: "TOP"
+name4: "国内旅行記"
 slug4: ""
 ---
 
