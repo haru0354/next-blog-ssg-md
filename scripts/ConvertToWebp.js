@@ -1,12 +1,16 @@
-const sharp = require("sharp");
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
+import sharp from "sharp";
+import { fileURLToPath } from "url";
 
 const convertToWebp = async () => {
-  const inputDirectory = path.join(__dirname, "..", "public");
-  const outputDirectory = path.join(__dirname, "..", "public", "image_webp");
+  const filename = fileURLToPath(import.meta.url);
+  const directoryName = path.dirname(filename);
+
+  const inputDirectory = path.join(directoryName, "..", "public");
+  const outputDirectory = path.join(directoryName, "..", "public", "image_webp");
   const outputThumbnailDirectory = path.join(
-    __dirname,
+    directoryName,
     "..",
     "public",
     "thumbnail_webp"
@@ -22,7 +26,7 @@ const convertToWebp = async () => {
 
   // 変換済みのファイル名のリストを読み込み
   const convertedFilePath = path.join(
-    __dirname,
+    directoryName,
     "..",
     "scripts",
     "ConvertedFileNameList.json"
