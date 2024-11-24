@@ -36,4 +36,7 @@ yarn-error.log*
 next-env.d.ts
 
 # image
-/public
+public/home.png
+public/logo.png
+public/thumbnail_webp/*
+public/image_webp/*
