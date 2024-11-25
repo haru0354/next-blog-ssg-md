@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/ConvertToWebp.js && next dev",
-    "build": "node scripts/ConvertToWebp.js && next build",
+    "dev": "node scripts/ConvertToWebp.mjs && next dev",
+    "build": "node scripts/ConvertToWebp.mjs && next build",
     "start": "npx serve@latest out",
     "lint": "next lint"
   },
