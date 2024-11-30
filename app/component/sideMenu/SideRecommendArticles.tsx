@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getRecommendArticles } from "../lib/MenuService";
+import { getRecommendArticles } from "../lib/menuService";
 
 const SideRecommendArticles = async () => {
   const RecommendArticles = await getRecommendArticles();
