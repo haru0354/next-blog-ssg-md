@@ -2,7 +2,7 @@ import Breadcrumbs from "@/app/component/contentArea/Breadcrumbs";
 import {
   getCategories,
   getCategory,
-} from "@/app/component/lib/CategoryService";
+} from "@/app/component/lib/categoryService";
 import parse from "html-react-parser";
 import Image from "next/image";
 import type { Metadata } from "next";

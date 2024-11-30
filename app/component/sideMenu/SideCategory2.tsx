@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getCategories } from "../lib/CategoryService";
+import { getCategories } from "../lib/categoryService";
 
 const SideCategory2 = async () => {
   const categories = await getCategories();

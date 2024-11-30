@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { getCategories } from "./component/lib/CategoryService";
+import { getCategories } from "./component/lib/categoryService";
 import { getArticles } from "./component/lib/ArticleService";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
