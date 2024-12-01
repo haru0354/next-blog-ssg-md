@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import GlobalMenu from "./GlobalMenu";
+import GlobalMenu from "./layouts/GlobalMenu";
 
 type HeaderProps = {
   isTopPage?: boolean;
