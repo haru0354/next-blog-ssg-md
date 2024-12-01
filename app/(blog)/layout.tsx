@@ -1,6 +1,6 @@
 import Footer from "../component/layouts/Footer";
 import Header from "../component/layouts/Header";
-import SideMenu from "@/app/component/SideMenu";
+import SideMenu from "../component/layouts/SideMenu";
 
 export default function RootLayout({
   children,
