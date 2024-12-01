@@ -1,5 +1,5 @@
 import Breadcrumbs from "@/app/component/contentArea/Breadcrumbs";
-import { getArticle, getArticles } from "@/app/component/lib/ArticleService";
+import { getArticle, getArticles } from "@/app/component/lib/articleService";
 import parse from "html-react-parser";
 import Image from "next/image";
 import type { Metadata } from "next";

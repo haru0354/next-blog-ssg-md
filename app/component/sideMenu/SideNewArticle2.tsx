@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getArticles } from "../lib/ArticleService";
+import { getArticles } from "../lib/articleService";
 import Image from "next/image";
 
 const SideNewArticle2 = async () => {
