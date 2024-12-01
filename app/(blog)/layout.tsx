@@ -1,4 +1,4 @@
-import Footer from "@/app/component/Footer";
+import Footer from "../component/layouts/Footer";
 import Header from "@/app/component/Header";
 import SideMenu from "@/app/component/SideMenu";
 
