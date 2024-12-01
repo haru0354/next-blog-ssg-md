@@ -1,7 +1,7 @@
-import SideCategory2 from "../sideMenu/SideCategory2";
-import SideLinks from "../sideMenu/SideLinks";
-import SideNewArticle2 from "../sideMenu/SideNewArticle2";
-import SideRecommendArticles from "../sideMenu/SideRecommendArticles";
+import SideCategory2 from "../side-menu/SideCategory2";
+import SideLinks from "../side-menu/SideLinks";
+import SideNewArticle2 from "../side-menu/SideNewArticle2";
+import SideRecommendArticles from "../side-menu/SideRecommendArticles";
 
 const SideMenu = () => {
   return (
