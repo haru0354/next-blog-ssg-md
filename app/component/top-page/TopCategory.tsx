@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getCategories } from "../lib/CategoryService";
+import { getCategories } from "../lib/categoryService";
 import Image from "next/image";
 
 const TopCategory = async () => {

@@ -1,39 +1,29 @@
 import Link from "next/link";
-import { getArticles } from "../lib/ArticleService";
 import Image from "next/image";
+import { getArticles } from "../lib/articleService";
 
-type ArticleInArticleListProps = {
-  categorySlug: string;
-  articleSlug: string;
+type CategoryInArticlesList2Props = {
+  category: string;
+  params: string;
 };
 
-const ArticleInArticleList: React.FC<ArticleInArticleListProps> = async ({
-  categorySlug,
-  articleSlug,
+const CategoryInArticlesList2: React.FC<CategoryInArticlesList2Props> = async ({
+  params,
+  category,
 }) => {
+  const currentCategory = params;
   const Articles = await getArticles();
-
   const filteredArticles = Articles.filter(
-    (article) =>
-      categorySlug === article.frontmatter.categorySlug &&
-      articleSlug !== article.slug
+    (article) => currentCategory === article.frontmatter.categorySlug
   );
 
-  const sortedArticles = filteredArticles.sort((a, b) => {
-    const dateA = new Date(a.frontmatter.date);
-    const dateB = new Date(b.frontmatter.date);
-    return dateB.getTime() - dateA.getTime();
-  });
-
-  const latestArticles = sortedArticles.slice(0, 4);
-
   return (
-    <div className="bg-white p-4 mt-8 border border-gray-200">
-      <h2 className="w-full my-4 py-5 px-3 bg-gray-800 text-white text-lg font-semibold rounded">
-        関連記事
+    <div className="bg-white p-4 mt-8">
+      <h2 className="w-full my-4 py-4 px-2 bg-gray-800 text-white text-xl font-semibold rounded">
+        {category}の一覧
       </h2>
       <div className="w-full flex flex-wrap justify-center">
-        {latestArticles.map((article) => (
+        {filteredArticles.map((article) => (
           <Link
             href={`/${article.frontmatter.categorySlug}/${article.slug}`}
             key={article.slug}
@@ -47,7 +37,7 @@ const ArticleInArticleList: React.FC<ArticleInArticleListProps> = async ({
                   height={225}
                 />
               </div>
-              <div className="flex flex-col md:min-w-[422px] py-2 px-4">
+              <div className="flex flex-col md:min-w-[442px] py-2 px-4">
                 <h3 className="mb-6 font-semibold">
                   {article.frontmatter.title}
                 </h3>
@@ -65,4 +55,4 @@ const ArticleInArticleList: React.FC<ArticleInArticleListProps> = async ({
   );
 };
 
-export default ArticleInArticleList;
+export default CategoryInArticlesList2;

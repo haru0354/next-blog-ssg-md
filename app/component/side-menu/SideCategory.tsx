@@ -1,18 +1,20 @@
 import Link from "next/link";
-import { getCategories } from "../lib/CategoryService";
+import { getCategories } from "../lib/categoryService";
 
-const SideCategory2 = async () => {
+const SideCategory = async () => {
   const categories = await getCategories();
 
   return (
-    <nav className="bg-white border-r border-l border-gray-200">
-      <p className="w-full p-4 bg-gray-800 text-white font-bold">カテゴリ</p>
+    <nav>
+      <p className="w-full mt-4 py-4 px-2 bg-gray-800 text-white font-bold rounded">
+        カテゴリ
+      </p>
       <ul>
         {categories.map((category) => {
           return (
             <Link href={`/${category.slug}`} key={category.slug}>
               <li
-                className="p-4 border-b border-gray-200 hover:bg-blue-100"
+                className="p-3 hover:bg-blue-100"
                 key={category.frontmatter.categoryName}
               >
                 {category.frontmatter.categoryName}
@@ -25,4 +27,4 @@ const SideCategory2 = async () => {
   );
 };
 
-export default SideCategory2;
+export default SideCategory;

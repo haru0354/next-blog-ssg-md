@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { getArticles } from "../lib/ArticleService";
 import Image from "next/image";
+import { getArticles } from "../lib/articleService";
 
 type ArticleInArticleListProps = {
   categorySlug: string;
@@ -29,7 +29,7 @@ const ArticleInArticleList: React.FC<ArticleInArticleListProps> = async ({
 
   return (
     <div className="bg-white p-4 mt-8 border border-gray-200">
-      <h2 className="w-full my-4 py-4 px-2 bg-gray-800 text-white text-xl font-semibold rounded">
+      <h2 className="w-full my-4 py-5 px-3 bg-gray-800 text-white text-lg font-semibold rounded">
         関連記事
       </h2>
       <div className="w-full flex flex-wrap justify-center">
@@ -38,14 +38,25 @@ const ArticleInArticleList: React.FC<ArticleInArticleListProps> = async ({
             href={`/${article.frontmatter.categorySlug}/${article.slug}`}
             key={article.slug}
           >
-            <div className="flex flex-col max-w-[367px] md:min-h-[330px] mx-2 my-4">
-              <Image
-                src={`/thumbnail_webp/${article.frontmatter.eyeCatchName}.webp`}
-                alt={`${article.frontmatter.eyeCatchAlt}`}
-                width={367}
-                height={210}
-              />
-              <h3 className="my-4">{article.frontmatter.title}</h3>
+            <div className="flex flex-wrap justify-center md:flex-nowrap w-full my-2">
+              <div className="min-w-[342px] mb-2 md:mb-0">
+                <Image
+                  src={`/thumbnail_webp/${article.frontmatter.eyeCatchName}.webp`}
+                  alt={`${article.frontmatter.eyeCatchAlt}`}
+                  width={342}
+                  height={225}
+                />
+              </div>
+              <div className="flex flex-col md:min-w-[422px] py-2 px-4">
+                <h3 className="mb-6 font-semibold">
+                  {article.frontmatter.title}
+                </h3>
+                <p>
+                  {article.frontmatter.description.length > 80
+                    ? `${article.frontmatter.description.slice(0, 80)}...`
+                    : article.frontmatter.description}
+                </p>
+              </div>
             </div>
           </Link>
         ))}

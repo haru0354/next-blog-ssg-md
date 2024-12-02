@@ -1,12 +1,12 @@
-import Breadcrumbs from "@/app/component/contentArea/Breadcrumbs";
+import type { Metadata } from "next";
+import Image from "next/image";
+import parse from "html-react-parser";
 import {
   getCategories,
   getCategory,
-} from "@/app/component/lib/CategoryService";
-import parse from "html-react-parser";
-import Image from "next/image";
-import type { Metadata } from "next";
-import CategoryInArticlesList2Images from "@/app/component/contentArea/CategoryInArticlesList2Images";
+} from "@/app/component/lib/categoryService";
+import Breadcrumbs from "@/app/component/content-area/Breadcrumbs";
+import CategoryInArticlesList2Images from "@/app/component/content-area/CategoryInArticlesList2Images";
 
 export const generateMetadata = async ({
   params,

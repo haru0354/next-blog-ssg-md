@@ -1,28 +1,39 @@
 import Link from "next/link";
-import { getArticles } from "../lib/ArticleService";
 import Image from "next/image";
+import { getArticles } from "../lib/articleService";
 
-type CategoryInArticlesList2ImagesProps = {
-  category: string;
-  params: string
-}
+type ArticleInArticleListProps = {
+  categorySlug: string;
+  articleSlug: string;
+};
 
-const CategoryInArticlesList2Images: React.FC<CategoryInArticlesList2ImagesProps> = async ({
-  params, category
+const ArticleInArticleList: React.FC<ArticleInArticleListProps> = async ({
+  categorySlug,
+  articleSlug,
 }) => {
-  const currentCategory = params;
   const Articles = await getArticles();
+
   const filteredArticles = Articles.filter(
-    (article) => currentCategory === article.frontmatter.categorySlug
+    (article) =>
+      categorySlug === article.frontmatter.categorySlug &&
+      articleSlug !== article.slug
   );
+
+  const sortedArticles = filteredArticles.sort((a, b) => {
+    const dateA = new Date(a.frontmatter.date);
+    const dateB = new Date(b.frontmatter.date);
+    return dateB.getTime() - dateA.getTime();
+  });
+
+  const latestArticles = sortedArticles.slice(0, 4);
 
   return (
     <div className="bg-white p-4 mt-8 border border-gray-200">
       <h2 className="w-full my-4 py-4 px-2 bg-gray-800 text-white text-xl font-semibold rounded">
-        {category}の一覧
+        関連記事
       </h2>
       <div className="w-full flex flex-wrap justify-center">
-        {filteredArticles.map((article) => (
+        {latestArticles.map((article) => (
           <Link
             href={`/${article.frontmatter.categorySlug}/${article.slug}`}
             key={article.slug}
@@ -43,4 +54,4 @@ const CategoryInArticlesList2Images: React.FC<CategoryInArticlesList2ImagesProps
   );
 };
 
-export default CategoryInArticlesList2Images;
+export default ArticleInArticleList;
