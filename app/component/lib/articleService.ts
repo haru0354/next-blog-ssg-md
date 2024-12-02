@@ -1,23 +1,23 @@
 import path from "path";
 import fs from "fs";
-import matter from "gray-matter";
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkHtml from "remark-html";
+import { getFileContents } from "./getFileContents";
 
 export async function getArticles() {
   const ArticlesDirectory = path.join(process.cwd(), "mdFile", "article");
-  const fileNames = fs.readdirSync(ArticlesDirectory);
+  const fileNames = fs
+    .readdirSync(ArticlesDirectory)
+    .map((fileName) => fileName.replace(/\.md$/, ""));
 
   const Articles = await Promise.all(
     fileNames.map(async (fileName) => {
-      const filePath = path.join(ArticlesDirectory, `${fileName}`);
-      const fileContents = await fs.promises.readFile(filePath, "utf8");
-      const { data } = matter(fileContents);
+      const fileContents = await getFileContents(ArticlesDirectory, fileName);
 
       return {
-        slug: fileName.replace(".md", ""),
-        frontmatter: data,
+        slug: fileName,
+        frontmatter: fileContents?.frontmatter,
       };
     })
   );
@@ -27,19 +27,19 @@ export async function getArticles() {
 
 export async function getArticle(params: string) {
   const slug = params;
-  const filePath = path.join(process.cwd(), "mdFile", "article", `${slug}.md`);
+  const articleDirectory = path.join(process.cwd(), "mdFile", "article");
 
-  const fileContents = await fs.promises.readFile(filePath, "utf8");
+  const fileContents = await getFileContents(articleDirectory, slug, true);
 
-  const { data, content } = matter(fileContents);
   const processedContent = await unified()
     .use(remarkParse)
     .use(remarkHtml)
-    .process(content);
+    .process(fileContents?.content);
+
   const contentHtml = processedContent.toString();
 
   return {
-    frontmatter: data,
+    frontmatter: fileContents?.frontmatter,
     contentHtml,
   };
 }
