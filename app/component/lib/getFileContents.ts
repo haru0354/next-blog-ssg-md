@@ -5,10 +5,10 @@ import matter from "gray-matter";
 export async function getFileContents(
   directoryPath: string,
   fileName: string,
-  isContent: boolean
+  isContent?: boolean
 ) {
   try {
-    const filePath = path.join(directoryPath, `${fileName}.mdx`);
+    const filePath = path.join(directoryPath, `${fileName}.md`);
 
     let fileContents: string;
     try {

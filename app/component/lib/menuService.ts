@@ -1,37 +1,32 @@
 import path from "path";
-import fs from "fs";
-import matter from "gray-matter";
+import { getFileContents } from "./getFileContents";
 
 export async function getGlobalMenu() {
   const globalMenuDirectory = path.join(process.cwd(), "mdFile", "menu");
-  const filePath = path.join(globalMenuDirectory, "globalMenu.md");
-  const fileContents = await fs.promises.readFile(filePath, "utf8");
-  const { data } = matter(fileContents);
+  const fileContents = await getFileContents(globalMenuDirectory, "globalMenu");
 
   return {
-    frontmatter: data,
+    frontmatter: fileContents?.frontmatter,
   };
 }
 
 export async function getRecommendArticles() {
   const globalMenuDirectory = path.join(process.cwd(), "mdFile", "menu");
-  const filePath = path.join(globalMenuDirectory, "recommendArticle.md");
-  const fileContents = await fs.promises.readFile(filePath, "utf8");
-  const { data } = matter(fileContents);
+  const fileContents = await getFileContents(
+    globalMenuDirectory,
+    "recommendArticle"
+  );
 
   return {
-    frontmatter: data,
+    frontmatter: fileContents?.frontmatter,
   };
 }
 
 export async function getLinks() {
   const globalMenuDirectory = path.join(process.cwd(), "mdFile", "menu");
-  const filePath = path.join(globalMenuDirectory, "link.md");
-  const fileContents = await fs.promises.readFile(filePath, "utf8");
-  const { data } = matter(fileContents);
+  const fileContents = await getFileContents(globalMenuDirectory, "link");
 
   return {
-    frontmatter: data,
+    frontmatter: fileContents?.frontmatter,
   };
 }
-  
