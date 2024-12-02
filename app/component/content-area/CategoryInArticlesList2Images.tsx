@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { getArticles } from "../lib/articleService";
 import Image from "next/image";
+import { getArticles } from "../lib/articleService";
 
 type CategoryInArticlesList2ImagesProps = {
   category: string;

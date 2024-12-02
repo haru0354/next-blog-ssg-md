@@ -1,9 +1,9 @@
-import Breadcrumbs from "@/app/component/contentArea/Breadcrumbs";
-import { getArticle, getArticles } from "@/app/component/lib/articleService";
-import parse from "html-react-parser";
-import Image from "next/image";
 import type { Metadata } from "next";
-import ArticleInArticleList from "@/app/component/contentArea/ArticleInArticleList";
+import Image from "next/image";
+import parse from "html-react-parser";
+import { getArticle, getArticles } from "@/app/component/lib/articleService";
+import Breadcrumbs from "@/app/component/content-area/Breadcrumbs";
+import ArticleInArticleList from "@/app/component/content-area/ArticleInArticleList";
 
 export const generateMetadata = async ({
   params,
