@@ -1,9 +1,7 @@
 import path from "path";
 import fs from "fs";
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkHtml from "remark-html";
 import { getFileContents } from "./getFileContents";
+import { convertMarkdownToHtml } from "./convertMarkdownToHtml";
 
 export async function getCategories() {
   const categoryDirectory = path.join(process.cwd(), "mdFile", "category");
@@ -14,6 +12,11 @@ export async function getCategories() {
   const categories = await Promise.all(
     fileNames.map(async (fileName) => {
       const fileContents = await getFileContents(categoryDirectory, fileName);
+
+      if (!fileContents || !fileContents.content) {
+        const errorMessage = `カテゴリのデータの取得ができませんでした。ディレクトリ: ${categoryDirectory}, ファイル名: ${fileName}`;
+        throw new Error(errorMessage);
+      }
 
       return {
         slug: fileName,
@@ -29,6 +32,10 @@ export async function getCategory(params: string) {
   const slug = params;
   const categoriesDirectory = path.join(process.cwd(), "mdFile", "category");
   const fileContents = await getFileContents(categoriesDirectory, slug, true);
+
+  if (!fileContents || !fileContents.content) {
+    throw new Error(`カテゴリのデータの取得ができませんでした。: ${slug}`);
+  }
 
   const contentHtml = await convertMarkdownToHtml(fileContents.content);
 
