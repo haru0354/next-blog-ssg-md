@@ -26,15 +26,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const dynamicPathsArticles = Articles.map((article) => {
     return {
-      url: `${baseURL}/${article.frontmatter.categorySlug}/${article.slug}`,
-      lastModified: new Date(article.frontmatter.date),
+      url: `${baseURL}/${article.frontmatter?.categorySlug}/${article.slug}`,
+      lastModified: new Date(article.frontmatter?.date),
     };
   });
 
   const dynamicPathsCategories = categories.map((category) => {
     return {
       url: `${baseURL}/${category.slug}`,
-      lastModified: new Date(category.frontmatter.date),
+      lastModified: new Date(category.frontmatter?.date),
     };
   });
 
