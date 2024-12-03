@@ -1,8 +1,5 @@
 import path from "path";
 import fs from "fs";
-import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkHtml from "remark-html";
 import { getFileContents } from "./getFileContents";
 import { convertMarkdownToHtml } from "./convertMarkdownToHtml";
 
@@ -15,6 +12,10 @@ export async function getArticles() {
   const Articles = await Promise.all(
     fileNames.map(async (fileName) => {
       const fileContents = await getFileContents(ArticlesDirectory, fileName);
+
+      if (!fileContents || !fileContents.content) {
+        throw new Error(`記事のデータの取得ができませんでした。: ${fileName}`);
+      }
 
       return {
         slug: fileName,
@@ -32,6 +33,9 @@ export async function getArticle(params: string) {
 
   const fileContents = await getFileContents(articleDirectory, slug, true);
 
+  if (!fileContents || !fileContents.content) {
+    throw new Error(`記事のデータの取得ができませんでした。: ${slug}`);
+  }
   const contentHtml = await convertMarkdownToHtml(fileContents.content);
 
   return {
