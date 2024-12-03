@@ -30,11 +30,7 @@ export async function getCategory(params: string) {
   const categoriesDirectory = path.join(process.cwd(), "mdFile", "category");
   const fileContents = await getFileContents(categoriesDirectory, slug, true);
 
-  const processedContent = await unified()
-    .use(remarkParse)
-    .use(remarkHtml)
-    .process(fileContents?.content);
-  const contentHtml = processedContent.toString();
+  const contentHtml = await convertMarkdownToHtml(fileContents.content);
 
   return {
     frontmatter: fileContents?.frontmatter,
