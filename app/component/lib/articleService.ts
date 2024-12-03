@@ -4,6 +4,7 @@ import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkHtml from "remark-html";
 import { getFileContents } from "./getFileContents";
+import { convertMarkdownToHtml } from "./convertMarkdownToHtml";
 
 export async function getArticles() {
   const ArticlesDirectory = path.join(process.cwd(), "mdFile", "article");
@@ -31,12 +32,7 @@ export async function getArticle(params: string) {
 
   const fileContents = await getFileContents(articleDirectory, slug, true);
 
-  const processedContent = await unified()
-    .use(remarkParse)
-    .use(remarkHtml)
-    .process(fileContents?.content);
-
-  const contentHtml = processedContent.toString();
+  const contentHtml = await convertMarkdownToHtml(fileContents.content);
 
   return {
     frontmatter: fileContents?.frontmatter,
