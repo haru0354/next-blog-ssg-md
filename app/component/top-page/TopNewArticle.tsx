@@ -1,12 +1,13 @@
 import Link from "next/link";
-import { getArticles } from "../lib/articleService";
 import Image from "next/image";
+import { getArticles } from "../lib/articleService";
 
 const TopNewArticle = async () => {
   const articles = await getArticles();
+
   const sortedArticles = articles.sort((a, b) => {
-    const dateA = new Date(a.frontmatter.date);
-    const dateB = new Date(b.frontmatter.date);
+    const dateA = new Date(a.frontmatter?.date);
+    const dateB = new Date(b.frontmatter?.date);
     return dateB.getTime() - dateA.getTime();
   });
 
@@ -26,17 +27,17 @@ const TopNewArticle = async () => {
           {filteredArticles.map((article) => {
             return (
               <Link
-                href={`/${article.frontmatter.categorySlug}/${article.slug}`}
+                href={`/${article.frontmatter?.categorySlug}/${article.slug}`}
                 key={article.slug}
               >
                 <div className="flex flex-col justify-center items-center mx-2 mb-8 md:max-w-[320px] md:min-w-[320px]">
                   <Image
-                    src={`/image_webp/${article.frontmatter.eyeCatchName}.webp`}
-                    alt={`${article.frontmatter.eyeCatchAlt}`}
+                    src={`/image_webp/${article.frontmatter?.eyeCatchName}.webp`}
+                    alt={`${article.frontmatter?.eyeCatchAlt}`}
                     width={320}
                     height={230}
                   />
-                  <h3 className="p-4">{article.frontmatter.title}</h3>
+                  <h3 className="p-4">{article.frontmatter?.title}</h3>
                 </div>
               </Link>
             );

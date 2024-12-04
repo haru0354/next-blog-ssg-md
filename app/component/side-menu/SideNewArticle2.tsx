@@ -5,8 +5,8 @@ import { getArticles } from "../lib/articleService";
 const SideNewArticle2 = async () => {
   const articles = await getArticles();
   const sortedArticles = articles.sort((a, b) => {
-    const dateA = new Date(a.frontmatter.date);
-    const dateB = new Date(b.frontmatter.date);
+    const dateA = new Date(a.frontmatter?.date);
+    const dateB = new Date(b.frontmatter?.date);
     return dateB.getTime() - dateA.getTime();
   });
 
@@ -19,19 +19,19 @@ const SideNewArticle2 = async () => {
         {filteredArticles.map((article) => {
           return (
             <Link
-              href={`/${article.frontmatter.categorySlug}/${article.slug}`}
+              href={`/${article.frontmatter?.categorySlug}/${article.slug}`}
               key={article.slug}
             >
               <div className="hover:bg-blue-100 pt-4 md:pt-0">
                 <Image
-                  src={`/thumbnail_webp/${article.frontmatter.eyeCatchName}.webp`}
-                  alt={`${article.frontmatter.eyeCatchAlt}`}
+                  src={`/thumbnail_webp/${article.frontmatter?.eyeCatchName}.webp`}
+                  alt={`${article.frontmatter?.eyeCatchAlt}`}
                   width={298}
                   height={196}
                   className="mx-auto"
                 />
                 <p className="border-b pt-2 pb-6 px-4 border-gray-200">
-                  {article.frontmatter.title}
+                  {article.frontmatter?.title}
                 </p>
               </div>
             </Link>

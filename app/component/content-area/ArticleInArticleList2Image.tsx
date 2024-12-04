@@ -15,13 +15,13 @@ const ArticleInArticleList: React.FC<ArticleInArticleListProps> = async ({
 
   const filteredArticles = Articles.filter(
     (article) =>
-      categorySlug === article.frontmatter.categorySlug &&
+      categorySlug === article.frontmatter?.categorySlug &&
       articleSlug !== article.slug
   );
 
   const sortedArticles = filteredArticles.sort((a, b) => {
-    const dateA = new Date(a.frontmatter.date);
-    const dateB = new Date(b.frontmatter.date);
+    const dateA = new Date(a.frontmatter?.date);
+    const dateB = new Date(b.frontmatter?.date);
     return dateB.getTime() - dateA.getTime();
   });
 
@@ -35,17 +35,17 @@ const ArticleInArticleList: React.FC<ArticleInArticleListProps> = async ({
       <div className="w-full flex flex-wrap justify-center">
         {latestArticles.map((article) => (
           <Link
-            href={`/${article.frontmatter.categorySlug}/${article.slug}`}
+            href={`/${article.frontmatter?.categorySlug}/${article.slug}`}
             key={article.slug}
           >
             <div className="flex flex-col max-w-[367px] md:min-h-[330px] mx-2 my-4">
               <Image
-                src={`/thumbnail_webp/${article.frontmatter.eyeCatchName}.webp`}
-                alt={`${article.frontmatter.eyeCatchAlt}`}
+                src={`/thumbnail_webp/${article.frontmatter?.eyeCatchName}.webp`}
+                alt={`${article.frontmatter?.eyeCatchAlt}`}
                 width={367}
                 height={210}
               />
-              <h3 className="my-4">{article.frontmatter.title}</h3>
+              <h3 className="my-4">{article.frontmatter?.title}</h3>
             </div>
           </Link>
         ))}

@@ -16,11 +16,11 @@ export const generateMetadata = async ({
   const category = await getCategory(params.category_slug);
 
   return {
-    title: category.frontmatter.title,
-    description: category.frontmatter.description,
+    title: category.frontmatter?.title,
+    description: category.frontmatter?.description,
     openGraph: {
-      title: category.frontmatter.title,
-      description: category.frontmatter.description,
+      title: category.frontmatter?.title,
+      description: category.frontmatter?.description,
     },
   };
 };
@@ -41,13 +41,13 @@ const page = async ({ params }: { params: { category_slug: string } }) => {
       <div className="content p-4 bg-white border border-gray-200">
         <Breadcrumbs
           categorySlug={params.category_slug}
-          categoryName={category.frontmatter.categoryName}
+          categoryName={category.frontmatter?.categoryName}
           isCategory={true}
         />
         <h1 className="text-2xl font-semibold mx-2 my-4">
-          {category.frontmatter.title}
+          {category.frontmatter?.title}
         </h1>
-        {category.frontmatter.eyeCatchName && (
+        {category.frontmatter?.eyeCatchName && (
           <Image
             src={`/image_webp/${category.frontmatter.eyeCatchName}.webp`}
             alt={`${category.frontmatter.eyeCatchAlt}`}
@@ -59,7 +59,7 @@ const page = async ({ params }: { params: { category_slug: string } }) => {
         {category.contentHtml && (
           <>
             <p className="my-2 mx-2 mb-6 text-gray-600 font-sm">
-              投稿日：{category.frontmatter.date}
+              投稿日：{category.frontmatter?.date}
             </p>
             {parse(category.contentHtml)}
           </>
@@ -67,7 +67,7 @@ const page = async ({ params }: { params: { category_slug: string } }) => {
       </div>
       <CategoryInArticlesList2Images
         params={params.category_slug}
-        category={category.frontmatter.categoryName}
+        category={category.frontmatter?.categoryName}
       />
     </>
   );

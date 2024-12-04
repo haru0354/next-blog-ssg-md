@@ -14,7 +14,7 @@ const CategoryInArticlesList2: React.FC<CategoryInArticlesList2Props> = async ({
   const currentCategory = params;
   const Articles = await getArticles();
   const filteredArticles = Articles.filter(
-    (article) => currentCategory === article.frontmatter.categorySlug
+    (article) => currentCategory === article.frontmatter?.categorySlug
   );
 
   return (
@@ -25,26 +25,26 @@ const CategoryInArticlesList2: React.FC<CategoryInArticlesList2Props> = async ({
       <div className="w-full flex flex-wrap justify-center">
         {filteredArticles.map((article) => (
           <Link
-            href={`/${article.frontmatter.categorySlug}/${article.slug}`}
+            href={`/${article.frontmatter?.categorySlug}/${article.slug}`}
             key={article.slug}
           >
             <div className="flex flex-wrap justify-center md:flex-nowrap w-full my-2">
               <div className="min-w-[342px] mb-2 md:mb-0">
                 <Image
-                  src={`/thumbnail_webp/${article.frontmatter.eyeCatchName}.webp`}
-                  alt={`${article.frontmatter.eyeCatchAlt}`}
+                  src={`/thumbnail_webp/${article.frontmatter?.eyeCatchName}.webp`}
+                  alt={`${article.frontmatter?.eyeCatchAlt}`}
                   width={342}
                   height={225}
                 />
               </div>
               <div className="flex flex-col md:min-w-[442px] py-2 px-4">
                 <h3 className="mb-6 font-semibold">
-                  {article.frontmatter.title}
+                  {article.frontmatter?.title}
                 </h3>
                 <p>
-                  {article.frontmatter.description.length > 80
-                    ? `${article.frontmatter.description.slice(0, 80)}...`
-                    : article.frontmatter.description}
+                  {article.frontmatter?.description.length > 80
+                    ? `${article.frontmatter?.description.slice(0, 80)}...`
+                    : article.frontmatter?.description}
                 </p>
               </div>
             </div>

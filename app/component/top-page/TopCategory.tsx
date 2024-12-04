@@ -21,12 +21,12 @@ const TopCategory = async () => {
               <Link href={`/${category.slug}`} key={category.slug}>
                 <div className="flex flex-col justify-center items-center mx-2 mb-8 md:max-w-[320px] md:min-w-[320px]">
                   <Image
-                    src={`/thumbnail_webp/${category.frontmatter.eyeCatchName}.webp`}
-                    alt={`${category.frontmatter.eyeCatchAlt}`}
+                    src={`/thumbnail_webp/${category.frontmatter?.eyeCatchName}.webp`}
+                    alt={`${category.frontmatter?.eyeCatchAlt}`}
                     width={320}
                     height={230}
                   />
-                  <h3 className="p-4">{category.frontmatter.title}</h3>
+                  <h3 className="p-4">{category.frontmatter?.title}</h3>
                 </div>
               </Link>
             );
