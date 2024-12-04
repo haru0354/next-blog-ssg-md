@@ -34,7 +34,8 @@ export async function getCategory(params: string) {
   const fileContents = await getFileContents(categoriesDirectory, slug, true);
 
   if (!fileContents || !fileContents.content) {
-    throw new Error(`カテゴリのデータの取得ができませんでした。: ${slug}`);
+    console.error(`カテゴリのデータの取得ができませんでした。: ${slug}`);
+    return null;
   }
 
   const contentHtml = await convertMarkdownToHtml(fileContents.content);
