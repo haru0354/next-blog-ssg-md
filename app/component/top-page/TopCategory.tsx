@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { getCategories } from "../lib/categoryService";
 import Image from "next/image";
+import { getCategories } from "../lib/service/categoryService";
 
 const TopCategory = async () => {
   const categories = await getCategories();

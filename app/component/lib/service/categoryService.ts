@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
-import { getFileContents } from "./getFileContents";
-import { convertMarkdownToHtml } from "./convertMarkdownToHtml";
+import { getFileContents } from "../getFileContents";
+import { convertMarkdownToHtml } from "../convertMarkdownToHtml";
 
 export async function getCategories() {
   const categoryDirectory = path.join(process.cwd(), "mdFile", "category");
