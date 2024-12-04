@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import parse from "html-react-parser";
-import { getArticle, getArticles } from "@/app/component/lib/articleService";
+import { getArticle, getArticles } from "@/app/component/lib/service/articleService";
 import Breadcrumbs from "@/app/component/content-area/Breadcrumbs";
 import ArticleInArticleList from "@/app/component/content-area/ArticleInArticleList";
 

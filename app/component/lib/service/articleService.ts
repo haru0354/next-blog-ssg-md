@@ -1,7 +1,8 @@
 import path from "path";
 import fs from "fs";
-import { getFileContents } from "./getFileContents";
-import { convertMarkdownToHtml } from "./convertMarkdownToHtml";
+import { getFileContents } from "../getFileContents";
+import { convertMarkdownToHtml } from "../convertMarkdownToHtml";
+import { error } from "console";
 
 export async function getArticles() {
   const ArticlesDirectory = path.join(process.cwd(), "mdFile", "article");
@@ -13,8 +14,8 @@ export async function getArticles() {
     fileNames.map(async (fileName) => {
       const fileContents = await getFileContents(ArticlesDirectory, fileName);
 
-      if (!fileContents || !fileContents.content) {
-        throw new Error(`記事のデータの取得ができませんでした。: ${fileName}`);
+      if (!fileContents) {
+        console.error(`記事のデータの取得ができませんでした。: ${fileName}`);
       }
 
       return {

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getArticles } from "../lib/articleService";
+import { getArticles } from "../lib/service/articleService";
 
 const SideNewArticle2 = async () => {
   const articles = await getArticles();

@@ -13,9 +13,9 @@ export async function getCategories() {
     fileNames.map(async (fileName) => {
       const fileContents = await getFileContents(categoryDirectory, fileName);
 
-      if (!fileContents || !fileContents.content) {
+      if (!fileContents) {
         const errorMessage = `カテゴリのデータの取得ができませんでした。ディレクトリ: ${categoryDirectory}, ファイル名: ${fileName}`;
-        throw new Error(errorMessage);
+        console.error(errorMessage);
       }
 
       return {
