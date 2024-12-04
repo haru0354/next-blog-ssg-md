@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { getLinks } from "../lib/menuService";
+import { getLinks } from "../lib/service/menuService";
 
 const SideLinks = async () => {
   const links = await getLinks();
 
-  if (!links.frontmatter.name) {
+  if (!links.frontmatter?.name) {
     return null;
   }
 

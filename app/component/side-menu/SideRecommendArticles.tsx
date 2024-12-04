@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getRecommendArticles } from "../lib/menuService";
+import { getRecommendArticles } from "../lib/service/menuService";
 
 const SideRecommendArticles = async () => {
   const RecommendArticles = await getRecommendArticles();
 
-  if (!RecommendArticles.frontmatter.slug) {
+  if (!RecommendArticles.frontmatter?.slug) {
     return null;
   }
 

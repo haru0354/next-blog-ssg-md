@@ -1,5 +1,5 @@
 import path from "path";
-import { getFileContents } from "./getFileContents";
+import { getFileContents } from "../getFileContents";
 
 export async function getGlobalMenu() {
   const globalMenuDirectory = path.join(process.cwd(), "mdFile", "menu");
