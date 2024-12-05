@@ -37,7 +37,7 @@ export async function generateStaticParams() {
   const categories = await getCategories();
 
   return categories.map((category) => ({
-    category_slug: category.slug,
+    category_slug: category?.slug,
   }));
 }
 
