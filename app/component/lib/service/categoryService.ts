@@ -33,15 +33,18 @@ export async function getCategory(params: string) {
   const categoriesDirectory = path.join(process.cwd(), "mdFile", "category");
   const fileContents = await getFileContents(categoriesDirectory, slug, true);
 
-  if (!fileContents || !fileContents.content) {
+  if (!fileContents) {
     console.error(`カテゴリのデータの取得ができませんでした。: ${slug}`);
     return null;
   }
 
-  const contentHtml = await convertMarkdownToHtml(fileContents.content);
+  let contentHtml;
+  if (fileContents.content) {
+    contentHtml = await convertMarkdownToHtml(fileContents.content);
+  }
 
   return {
     frontmatter: fileContents?.frontmatter,
-    contentHtml,
+    ...(contentHtml && { contentHtml }),
   };
 }
