@@ -9,6 +9,7 @@ export async function getGlobalMenu() {
     console.error(
       `グローバルメニューのデータの取得ができませんでした。: ディレクトリ: ${globalMenuDirectory}, ファイル名: globalMenu.md`
     );
+    return null;
   }
 
   return {
@@ -27,6 +28,7 @@ export async function getRecommendArticles() {
     console.error(
       `おすすめの記事のデータの取得ができませんでした。: ディレクトリ: ${globalMenuDirectory}, ファイル名: recommendArticle.md`
     );
+    return null;
   }
 
   return {
@@ -42,6 +44,7 @@ export async function getLinks() {
     console.error(
       `サイドバーのリンクのデータの取得ができませんでした。: ディレクトリ: ${globalMenuDirectory}, ファイル名: link.md`
     );
+    return null;
   }
 
   return {

@@ -4,6 +4,11 @@ import { getArticles } from "../lib/service/articleService";
 
 const SideNewArticle2 = async () => {
   const articles = await getArticles();
+
+  if (!articles) {
+    return null;
+  }
+
   const sortedArticles = articles.sort((a, b) => {
     const dateA = new Date(a.frontmatter?.date);
     const dateB = new Date(b.frontmatter?.date);

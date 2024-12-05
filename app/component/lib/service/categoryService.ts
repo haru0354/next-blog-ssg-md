@@ -16,6 +16,7 @@ export async function getCategories() {
       if (!fileContents) {
         const errorMessage = `カテゴリのデータの取得ができませんでした。ディレクトリ: ${categoryDirectory}, ファイル名: ${fileName}`;
         console.error(errorMessage);
+        return null;
       }
 
       return {

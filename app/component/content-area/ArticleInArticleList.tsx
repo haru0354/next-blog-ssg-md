@@ -11,11 +11,15 @@ const ArticleInArticleList: React.FC<ArticleInArticleListProps> = async ({
   categorySlug,
   articleSlug,
 }) => {
-  const Articles = await getArticles();
+  const articles = await getArticles();
 
-  const filteredArticles = Articles.filter(
+  if (!articles) {
+    return null;
+  }
+
+  const filteredArticles = articles.filter(
     (article) =>
-      categorySlug === article.frontmatter?.categorySlug &&
+      categorySlug === article?.frontmatter?.categorySlug &&
       articleSlug !== article.slug
   );
 

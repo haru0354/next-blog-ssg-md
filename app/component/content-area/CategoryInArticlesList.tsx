@@ -12,8 +12,13 @@ const CategoryInArticlesList2: React.FC<CategoryInArticlesList2Props> = async ({
   category,
 }) => {
   const currentCategory = params;
-  const Articles = await getArticles();
-  const filteredArticles = Articles.filter(
+  const articles = await getArticles();
+
+  if (!articles) {
+    return null;
+  }
+
+  const filteredArticles = articles.filter(
     (article) => currentCategory === article.frontmatter?.categorySlug
   );
 
