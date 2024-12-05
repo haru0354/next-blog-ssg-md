@@ -4,7 +4,7 @@ import { getLinks } from "../lib/service/menuService";
 const SideLinks = async () => {
   const links = await getLinks();
 
-  if (!links.frontmatter?.name) {
+  if (!links) {
     return null;
   }
 
