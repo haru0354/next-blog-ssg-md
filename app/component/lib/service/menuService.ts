@@ -3,51 +3,75 @@ import { getFileContents } from "../getFileContents";
 
 export async function getGlobalMenu() {
   const globalMenuDirectory = path.join(process.cwd(), "mdFile", "menu");
-  const fileContents = await getFileContents(globalMenuDirectory, "globalMenu");
 
-  if (!fileContents) {
+  try {
+    const fileContents = await getFileContents(
+      globalMenuDirectory,
+      "globalMenu"
+    );
+
+    if (!fileContents) {
+      console.error("グローバルメニューのデータの取得ができませんでした。");
+      return null;
+    }
+
+    return {
+      frontmatter: fileContents?.frontmatter,
+    };
+  } catch (error) {
     console.error(
-      `グローバルメニューのデータの取得ができませんでした。: ディレクトリ: ${globalMenuDirectory}, ファイル名: globalMenu.md`
+      "グローバルメニューのデータ取得中にエラーが発生しました。",
+      error
     );
     return null;
   }
-
-  return {
-    frontmatter: fileContents?.frontmatter,
-  };
 }
 
 export async function getRecommendArticles() {
   const globalMenuDirectory = path.join(process.cwd(), "mdFile", "menu");
-  const fileContents = await getFileContents(
-    globalMenuDirectory,
-    "recommendArticle"
-  );
 
-  if (!fileContents) {
+  try {
+    const fileContents = await getFileContents(
+      globalMenuDirectory,
+      "recommendArticle"
+    );
+
+    if (!fileContents) {
+      console.error("おすすめの記事のデータの取得ができませんでした。");
+      return null;
+    }
+
+    return {
+      frontmatter: fileContents?.frontmatter,
+    };
+  } catch (error) {
     console.error(
-      `おすすめの記事のデータの取得ができませんでした。: ディレクトリ: ${globalMenuDirectory}, ファイル名: recommendArticle.md`
+      "おすすめの記事のデータ取得中にエラーが発生しました。",
+      error
     );
     return null;
   }
-
-  return {
-    frontmatter: fileContents?.frontmatter,
-  };
 }
 
 export async function getLinks() {
   const globalMenuDirectory = path.join(process.cwd(), "mdFile", "menu");
-  const fileContents = await getFileContents(globalMenuDirectory, "link");
 
-  if (!fileContents) {
+  try {
+    const fileContents = await getFileContents(globalMenuDirectory, "link");
+
+    if (!fileContents) {
+      console.error("サイドバーのリンクのデータの取得ができませんでした。");
+      return null;
+    }
+
+    return {
+      frontmatter: fileContents?.frontmatter,
+    };
+  } catch (error) {
     console.error(
-      `サイドバーのリンクのデータの取得ができませんでした。: ディレクトリ: ${globalMenuDirectory}, ファイル名: link.md`
+      "サイドバーのリンクのデータの取得中にエラーが発生しました。",
+      error
     );
     return null;
   }
-
-  return {
-    frontmatter: fileContents?.frontmatter,
-  };
 }
