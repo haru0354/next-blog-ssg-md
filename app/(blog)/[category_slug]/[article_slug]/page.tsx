@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import parse from "html-react-parser";
-import { getArticle, getArticles } from "@/app/component/lib/articleService";
+import {
+  getArticle,
+  getArticles,
+} from "@/app/component/lib/service/articleService";
 import Breadcrumbs from "@/app/component/content-area/Breadcrumbs";
 import ArticleInArticleList from "@/app/component/content-area/ArticleInArticleList";
+import NotFound from "@/app/not-found";
 
 export const generateMetadata = async ({
   params,
@@ -11,6 +15,14 @@ export const generateMetadata = async ({
   params: { article_slug: string };
 }): Promise<Metadata> => {
   const article = await getArticle(params.article_slug);
+
+  if (!article) {
+    return {
+      title: "404NotFound（記事がありません）",
+      description:
+        "記事がありません。指定されたファイルまたはディレクトリは存在しません。",
+    };
+  }
 
   return {
     title: article.frontmatter?.title,
@@ -37,6 +49,10 @@ const page = async ({
   params: { article_slug: string; category_slug: string };
 }) => {
   const article = await getArticle(params.article_slug);
+
+  if (!article) {
+    return <NotFound />;
+  }
 
   return (
     <>

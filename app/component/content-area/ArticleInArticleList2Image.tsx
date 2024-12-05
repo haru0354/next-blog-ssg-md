@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getArticles } from "../lib/articleService";
+import { getArticles } from "../lib/service/articleService";
 
 type ArticleInArticleListProps = {
   categorySlug: string;
@@ -11,9 +11,13 @@ const ArticleInArticleList: React.FC<ArticleInArticleListProps> = async ({
   categorySlug,
   articleSlug,
 }) => {
-  const Articles = await getArticles();
+  const articles = await getArticles();
 
-  const filteredArticles = Articles.filter(
+  if (!articles) {
+    return null;
+  }
+
+  const filteredArticles = articles.filter(
     (article) =>
       categorySlug === article.frontmatter?.categorySlug &&
       articleSlug !== article.slug

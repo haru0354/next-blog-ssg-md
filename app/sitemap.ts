@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
-import { getCategories } from "./component/lib/categoryService";
-import { getArticles } from "./component/lib/articleService";
+import { getCategories } from "./component/lib/service/categoryService";
+import { getArticles } from "./component/lib/service/articleService";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseURL = "サイトのURL";
@@ -33,8 +33,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const dynamicPathsCategories = categories.map((category) => {
     return {
-      url: `${baseURL}/${category.slug}`,
-      lastModified: new Date(category.frontmatter?.date),
+      url: `${baseURL}/${category?.slug}`,
+      lastModified: new Date(category?.frontmatter?.date),
     };
   });
 

@@ -4,9 +4,10 @@ import parse from "html-react-parser";
 import {
   getCategories,
   getCategory,
-} from "@/app/component/lib/categoryService";
+} from "@/app/component/lib/service/categoryService";
 import Breadcrumbs from "@/app/component/content-area/Breadcrumbs";
 import CategoryInArticlesList2Images from "@/app/component/content-area/CategoryInArticlesList2Images";
+import NotFound from "@/app/not-found";
 
 export const generateMetadata = async ({
   params,
@@ -14,6 +15,13 @@ export const generateMetadata = async ({
   params: { category_slug: string };
 }): Promise<Metadata> => {
   const category = await getCategory(params.category_slug);
+
+  if (!category) {
+    return {
+      title: "404NotFound（カテゴリがありません）",
+      description: "カテゴリがありません。指定されたファイルまたはディレクトリは存在しません。",
+    };
+  }
 
   return {
     title: category.frontmatter?.title,
@@ -29,12 +37,16 @@ export async function generateStaticParams() {
   const categories = await getCategories();
 
   return categories.map((category) => ({
-    category_slug: category.slug,
+    category_slug: category?.slug,
   }));
 }
 
 const page = async ({ params }: { params: { category_slug: string } }) => {
   const category = await getCategory(params.category_slug);
+
+  if (!category) {
+    return <NotFound />;
+  }
 
   return (
     <>

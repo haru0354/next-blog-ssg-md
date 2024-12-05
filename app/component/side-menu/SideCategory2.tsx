@@ -1,8 +1,12 @@
 import Link from "next/link";
-import { getCategories } from "../lib/categoryService";
+import { getCategories } from "../lib/service/categoryService";
 
 const SideCategory2 = async () => {
   const categories = await getCategories();
+
+  if (!categories) {
+    return null;
+  }
 
   return (
     <nav className="bg-white border-r border-l border-gray-200">
@@ -10,12 +14,12 @@ const SideCategory2 = async () => {
       <ul>
         {categories.map((category) => {
           return (
-            <Link href={`/${category.slug}`} key={category.slug}>
+            <Link href={`/${category?.slug}`} key={category?.slug}>
               <li
                 className="p-4 border-b border-gray-200 hover:bg-blue-100"
-                key={category.frontmatter?.categoryName}
+                key={category?.frontmatter?.categoryName}
               >
-                {category.frontmatter?.categoryName}
+                {category?.frontmatter?.categoryName}
               </li>
             </Link>
           );

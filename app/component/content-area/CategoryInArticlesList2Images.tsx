@@ -1,18 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getArticles } from "../lib/articleService";
+import { getArticles } from "../lib/service/articleService";
 
 type CategoryInArticlesList2ImagesProps = {
   category: string;
-  params: string
-}
+  params: string;
+};
 
-const CategoryInArticlesList2Images: React.FC<CategoryInArticlesList2ImagesProps> = async ({
-  params, category
-}) => {
+const CategoryInArticlesList2Images: React.FC<
+  CategoryInArticlesList2ImagesProps
+> = async ({ params, category }) => {
   const currentCategory = params;
-  const Articles = await getArticles();
-  const filteredArticles = Articles.filter(
+  const articles = await getArticles();
+
+  if (!articles) {
+    return null;
+  }
+
+  const filteredArticles = articles.filter(
     (article) => currentCategory === article.frontmatter?.categorySlug
   );
 

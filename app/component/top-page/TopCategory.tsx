@@ -1,9 +1,13 @@
 import Link from "next/link";
-import { getCategories } from "../lib/categoryService";
 import Image from "next/image";
+import { getCategories } from "../lib/service/categoryService";
 
 const TopCategory = async () => {
   const categories = await getCategories();
+
+  if (!categories) {
+    return null;
+  }
 
   return (
     <section className="bg-gray-100 w-full md:py-8 py-2">
@@ -18,15 +22,15 @@ const TopCategory = async () => {
         <div className="flex flex-wrap w-full justify-center">
           {categories.map((category) => {
             return (
-              <Link href={`/${category.slug}`} key={category.slug}>
+              <Link href={`/${category?.slug}`} key={category?.slug}>
                 <div className="flex flex-col justify-center items-center mx-2 mb-8 md:max-w-[320px] md:min-w-[320px]">
                   <Image
-                    src={`/thumbnail_webp/${category.frontmatter?.eyeCatchName}.webp`}
-                    alt={`${category.frontmatter?.eyeCatchAlt}`}
+                    src={`/thumbnail_webp/${category?.frontmatter?.eyeCatchName}.webp`}
+                    alt={`${category?.frontmatter?.eyeCatchAlt}`}
                     width={320}
                     height={230}
                   />
-                  <h3 className="p-4">{category.frontmatter?.title}</h3>
+                  <h3 className="p-4">{category?.frontmatter?.title}</h3>
                 </div>
               </Link>
             );
