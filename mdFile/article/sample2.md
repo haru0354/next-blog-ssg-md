@@ -4,7 +4,7 @@ date: '2022-04-01'
 description: 'ニキビの記事1description'
 categoryName: "旅行の準備"
 categorySlug: "sample"
-eyeCatchName: '00'
+eyeCatchName: 'no_image'
 eyeCatchAlt: 'test'
 ---
 
