@@ -1,12 +1,12 @@
 ---
-name: "旅行の準備"
-slug: "sample/sample"
-name2: "おすすめの旅行先"
+name: "TOP"
+slug: ""
+name2: "通常カテゴリ"
 slug2: "sample"
-name3: "海外旅行記"
-slug3: ""
-name4: "国内旅行記"
-slug4: ""
+name3: "記事化したカテゴリ"
+slug3: "sample2"
+name4: "記事ページ"
+slug4: "sample/sample"
 ---
 
 # 補足
