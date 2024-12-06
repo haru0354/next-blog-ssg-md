@@ -6,7 +6,7 @@ import {
   getArticles,
 } from "@/app/component/lib/service/articleService";
 import Breadcrumbs from "@/app/component/content-area/Breadcrumbs";
-import ArticleInArticleList from "@/app/component/content-area/ArticleInArticleList";
+import ArticleInArticleList from "@/app/component/content-area/related-articles/ArticleInArticleList";
 import NotFound from "@/app/not-found";
 
 export const generateMetadata = async ({
@@ -77,7 +77,8 @@ const page = async ({
         {parse(article.contentHtml)}
       </div>
       <ArticleInArticleList
-        categorySlug={params.category_slug}
+        column={true}
+        categoryName={article.frontmatter?.categoryName}
         articleSlug={params.article_slug}
       />
     </>
