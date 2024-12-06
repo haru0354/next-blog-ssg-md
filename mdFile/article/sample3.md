@@ -1,10 +1,10 @@
 ---
-title: "個別記事aa"
+title: "TEST記事"
 date: "2022-04-01"
-description: "個別記事"
-categoryName: "国内旅行記"
+description: "TEST記事"
+categoryName: "サンプルカテゴリ2"
 categorySlug: "sample2"
-eyeCatchName: "00"
+eyeCatchName: 'no_image'
 eyeCatchAlt: "test"
 ---
 

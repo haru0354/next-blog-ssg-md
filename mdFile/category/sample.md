@@ -1,8 +1,8 @@
 ---
-categoryName: '旅行の準備'
-title: '国内・海外旅行の事前準備一覧！旅行前に用意することリスト'
-description: 'ニキビdescription'
+categoryName: 'サンプルカテゴリ1'
+title: 'サンプルカテゴリ1'
+description: 'サンプルカテゴリ1'
 date: '2022-04-01'
-eyeCatchName: '00'
-eyeCatchAlt: 'test'
+eyeCatchName: 'no_image'
+eyeCatchAlt: '画像が準備できていません'
 ---

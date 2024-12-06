@@ -1,19 +1,19 @@
 ---
-categoryName: '国内旅行記'
-title: 'title'
+categoryName: 'サンプルカテゴリ2'
+title: 'サンプルカテゴリ2(カテゴリを記事化)'
+description: 'サンプルカテゴリ2'
 date: '2022-04-01'
-description: '美白description'
-eyeCatchName: '00'
-eyeCatchAlt: 'test'
+eyeCatchName: 'no_image'
+eyeCatchAlt: '画像が準備できていません'
 ---
 
 
 サンプル2
 
-## サンプル2
+## 記事ページと同じようにコンテンツを入れれます
 
 サンプル2
 
-### サンプル2
+### 内部リンクが集まるカテゴリページが記事化できます
 
 サンプル2

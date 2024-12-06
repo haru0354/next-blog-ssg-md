@@ -22,7 +22,14 @@ export async function getCategories() {
 
         return {
           slug: fileName,
-          frontmatter: fileContents?.frontmatter,
+          frontmatter: {
+            categoryName: fileContents.frontmatter.categoryName,
+            title: fileContents.frontmatter.title,
+            description: fileContents.frontmatter.description,
+            date: fileContents.frontmatter.date,
+            eyeCatchName:fileContents.frontmatter.eyeCatchName,
+            eyeCatchAlt: fileContents.frontmatter.eyeCatchAlt,
+          },
         };
       } catch (error) {
         console.error(`カテゴリの取得中にエラーが発生しました: ${fileName}`, error);
@@ -52,7 +59,14 @@ export async function getCategory(params: string) {
     }
 
     return {
-      frontmatter: fileContents?.frontmatter,
+      frontmatter: {
+        categoryName: fileContents.frontmatter.categoryName,
+        title: fileContents.frontmatter.title,
+        description: fileContents.frontmatter.description,
+        date: fileContents.frontmatter.date,
+        eyeCatchName:fileContents.frontmatter.eyeCatchName,
+        eyeCatchAlt: fileContents.frontmatter.eyeCatchAlt,
+      },
       ...(contentHtml && { contentHtml }),
     };
   } catch (error) {

@@ -1,10 +1,8 @@
 ---
-name: "旅のメモリーブック"
-slug: "sample/sample"
-name2: "外務省公式HP"
+name: "MDブログ"
+slug: ""
+name2: "MDXブログ"
 slug2: ""
-name3: "旅行先の危険度MAP"
+name3: "旅のメモリーブック"
 slug3: ""
-name4: "旅のQ＆A"
-slug4: ""
 ---

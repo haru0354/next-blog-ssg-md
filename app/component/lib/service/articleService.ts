@@ -25,7 +25,15 @@ export async function getArticles() {
 
           return {
             slug: fileName,
-            frontmatter: fileContents.frontmatter,
+            frontmatter: {
+              title: fileContents.frontmatter.title,
+              date: fileContents.frontmatter.date,
+              description: fileContents.frontmatter.description,
+              categoryName: fileContents.frontmatter.categoryName,
+              categorySlug: fileContents.frontmatter.categorySlug,
+              eyeCatchName:fileContents.frontmatter.eyeCatchName,
+              eyeCatchAlt: fileContents.frontmatter.eyeCatchAlt,
+            },
           };
         } catch (error) {
           console.error(
@@ -61,8 +69,16 @@ export async function getArticle(params: string) {
     }
 
     return {
-      frontmatter: fileContents?.frontmatter,
       contentHtml,
+      frontmatter: {
+        title: fileContents.frontmatter.title,
+        date: fileContents.frontmatter.date,
+        description: fileContents.frontmatter.description,
+        categoryName: fileContents.frontmatter.categoryName,
+        categorySlug: fileContents.frontmatter.categorySlug,
+        eyeCatchName:fileContents.frontmatter.eyeCatchName,
+        eyeCatchAlt: fileContents.frontmatter.eyeCatchAlt,
+      },
     };
   } catch (error) {
     console.error(`個別記事の取得中にエラーが発生しました: ${slug}`, error);
