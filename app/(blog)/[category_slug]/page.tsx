@@ -6,8 +6,8 @@ import {
   getCategory,
 } from "@/app/component/lib/service/categoryService";
 import Breadcrumbs from "@/app/component/content-area/Breadcrumbs";
-import CategoryInArticlesList2Images from "@/app/component/content-area/CategoryInArticlesList2Images";
 import NotFound from "@/app/not-found";
+import CategoryInArticlesList from "@/app/component/content-area/related-articles/CategoryInArticlesList";
 
 export const generateMetadata = async ({
   params,
@@ -19,7 +19,8 @@ export const generateMetadata = async ({
   if (!category) {
     return {
       title: "404NotFound（カテゴリがありません）",
-      description: "カテゴリがありません。指定されたファイルまたはディレクトリは存在しません。",
+      description:
+        "カテゴリがありません。指定されたファイルまたはディレクトリは存在しません。",
     };
   }
 
@@ -56,20 +57,22 @@ const page = async ({ params }: { params: { category_slug: string } }) => {
           categoryName={category.frontmatter?.categoryName}
           isCategory={true}
         />
-        <h1 className="text-2xl font-semibold mx-2 my-4">
-          {category.frontmatter?.title}
-        </h1>
-        {category.frontmatter?.eyeCatchName && (
-          <Image
-            src={`/image_webp/${category.frontmatter.eyeCatchName}.webp`}
-            alt={`${category.frontmatter.eyeCatchAlt}`}
-            width={750}
-            height={493}
-            className="mx-auto"
-          />
-        )}
+
         {category.contentHtml && (
           <>
+            <h1 className="text-2xl font-semibold mx-2 my-4">
+              {category.frontmatter?.title}
+            </h1>
+            {category.frontmatter?.eyeCatchName &&
+              category.frontmatter?.eyeCatchAlt && (
+                <Image
+                  src={`/image_webp/${category.frontmatter.eyeCatchName}.webp`}
+                  alt={`${category.frontmatter.eyeCatchAlt}`}
+                  width={750}
+                  height={493}
+                  className="mx-auto"
+                />
+              )}
             <p className="my-2 mx-2 mb-6 text-gray-600 font-sm">
               投稿日：{category.frontmatter?.date}
             </p>
@@ -77,9 +80,9 @@ const page = async ({ params }: { params: { category_slug: string } }) => {
           </>
         )}
       </div>
-      <CategoryInArticlesList2Images
-        params={params.category_slug}
-        category={category.frontmatter?.categoryName}
+      <CategoryInArticlesList
+        categoryContents={category.contentHtml ? true : false}
+        categoryName={category.frontmatter?.categoryName}
       />
     </>
   );

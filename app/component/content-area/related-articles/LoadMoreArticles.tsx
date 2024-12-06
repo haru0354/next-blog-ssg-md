@@ -28,14 +28,14 @@ const LoadMoreArticles: React.FC<LoadMoreArticlesProps> = ({
   column,
 }) => {
   const [displayedArticles, setDisplayedArticles] = useState<Article[]>(
-    articles.slice(0, 2)
+    articles.slice(0, 4)
   );
 
   const handleLoadMoreArticles = () => {
     setDisplayedArticles((prevArticles) => {
       const nextArticles = articles.slice(
         prevArticles.length,
-        prevArticles.length + 2
+        prevArticles.length + 4
       );
       return [...prevArticles, ...nextArticles];
     });
@@ -83,7 +83,13 @@ const LoadMoreArticles: React.FC<LoadMoreArticlesProps> = ({
             ))}
           </div>
           {displayedArticles.length < articles.length && (
-            <Button onClick={handleLoadMoreArticles} color="blue">更に記事を読み込む</Button>
+            <Button
+              onClick={handleLoadMoreArticles}
+              color="gray"
+              className="block mx-auto"
+            >
+              更に記事を読み込む
+            </Button>
           )}
         </>
       ) : (
@@ -119,7 +125,13 @@ const LoadMoreArticles: React.FC<LoadMoreArticlesProps> = ({
             ))}
           </div>
           {displayedArticles.length < articles.length && (
-            <Button onClick={handleLoadMoreArticles} color="blue">更に記事を読み込む</Button>
+            <Button
+              onClick={handleLoadMoreArticles}
+              color="gray"
+              className="block mx-auto"
+            >
+              更に記事を読み込む
+            </Button>
           )}
         </>
       )}
