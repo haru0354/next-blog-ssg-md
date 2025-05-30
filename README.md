@@ -100,7 +100,7 @@ publicフォルダに画像を配置すると、圧縮と変換がされた画�
 記事のアイキャッチには「image_webpフォルダ」の画像が配置されます。
 TOPページ、関連記事、サイドメニューには「thumbnail_webpフォルダ」の画像が配置されます。
 
-変換をした画像は「scriptsフォルダ」の「ConvertedFileNameList.json」にリスト化。
+変換をした画像は「scriptsフォルダ」の「convertedFileNameList.json」にリスト化。
 再度、実行時に照らし合わせて、未変換のファイルのみ変換と圧縮がされる仕様です。
 
 また、専用の画像変換コマンドの「npm run image」でも実行がされるようになっています。
