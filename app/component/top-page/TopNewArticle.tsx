@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getArticles } from "../lib/service/articleService";
+
+import { getArticles } from "@/app/lib/service/articleService";
 
 const TopNewArticle = async () => {
   const articles = await getArticles();

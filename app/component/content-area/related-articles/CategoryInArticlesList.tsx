@@ -1,5 +1,5 @@
-import { getArticles } from "../../lib/service/articleService";
-import { shuffleArray } from "../../util/shuffleArray";
+import { getArticles } from "@/app/lib/service/articleService";
+import { shuffleArray } from "@/app/utils/shuffleArray";
 import LoadMoreArticles from "./LoadMoreArticles";
 
 type CategoryInArticlesListProps = {

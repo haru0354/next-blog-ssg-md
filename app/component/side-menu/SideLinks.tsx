@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { getLinks } from "../lib/service/menuService";
+
+import { getLinks } from "@/app/lib/service/menuService";
 
 const SideLinks = async () => {
   const links = await getLinks();

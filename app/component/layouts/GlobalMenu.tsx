@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { getGlobalMenu } from "../lib/service/menuService";
+
+import { getGlobalMenu } from "@/app/lib/service/menuService";
 
 const GlobalMenu = async () => {
   const globalMenu = await getGlobalMenu();

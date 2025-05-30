@@ -4,7 +4,7 @@ import parse from "html-react-parser";
 import {
   getCategories,
   getCategory,
-} from "@/app/component/lib/service/categoryService";
+} from "@/app/lib/service/categoryService";
 import Breadcrumbs from "@/app/component/content-area/Breadcrumbs";
 import NotFound from "@/app/not-found";
 import CategoryInArticlesList from "@/app/component/content-area/related-articles/CategoryInArticlesList";

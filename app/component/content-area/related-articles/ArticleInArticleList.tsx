@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getArticles } from "../../lib/service/articleService";
-import { shuffleArray } from "../../util/shuffleArray";
+
+import { getArticles } from "@/app/lib/service/articleService";
+import { shuffleArray } from "@/app/utils/shuffleArray";
 
 type ArticleInArticleListProps = {
   categoryName: string;
