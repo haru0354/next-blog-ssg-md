@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { notoSansJp } from "./component/util/font";
+import { notoSansJp } from "./utils/font";
 
 export const metadata: Metadata = {
   title: {
